@@ -36,7 +36,7 @@ A modern, responsive, and feature-rich FiveM server website template designed fo
 ## 📁 File Structure
 
 ```
-mtrp-web-main/
+fivem-web-template/
 ├── 📄 index.html                 # Main homepage
 ├── 📄 404.html                   # Custom error page
 ├── 📄 server.js                  # Express.js development server
@@ -47,7 +47,6 @@ mtrp-web-main/
 ├── 📄 styles.css                 # Custom CSS styles and animations
 ├── 📄 script.js                  # General JavaScript functionality
 ├── 📄 server-status.js           # FiveM server status integration
-├── 📄 color-demo.html            # Color scheme demonstration page
 └── 📁 pages/                     # Additional website pages
     ├── 📄 about.html             # About Us page
     ├── 📄 join.html              # Join/Connect page
@@ -68,7 +67,7 @@ mtrp-web-main/
 ### **2. Local Development**
 ```bash
 # Navigate to project directory
-cd mtrp-web-main
+cd fivem-web-template
 
 
 # Start local development server
@@ -178,7 +177,6 @@ The template uses a blue color scheme. To change colors:
 - **Firefox**: Full support
 - **Safari**: Full support
 - **Edge**: Full support
-- **Internet Explorer**: Limited support (not recommended)
 
 ## 📱 Mobile Optimization
 
@@ -194,18 +192,6 @@ The template uses a blue color scheme. To change colors:
 - **Enable Compression**: Use Gzip compression on server
 - **CDN Usage**: Serve static assets from CDN
 
-## 🎯 SEO & Analytics
-
-### **SEO Features**
-- **Meta Tags**: Proper title, description, and keywords
-- **Semantic HTML**: Proper heading structure and landmarks
-- **Alt Text**: Descriptive alt text for images
-- **Sitemap**: XML sitemap for search engines
-
-### **Analytics Integration**
-- **Google Analytics**: Add tracking code to `<head>`
-- **Google Search Console**: Submit sitemap for indexing
-- **Social Media**: Open Graph and Twitter Card meta tags
 
 ## 🤝 Support & Contributing
 
@@ -246,9 +232,22 @@ This template is provided by **PX Scripts** for free use and modification. You a
 - **Template**: FiveM Server Website Template
 - **Version**: 1.0.0
 - **Last Updated**: Aug 2025
+- Discord: [PX Scripts](https://discord.gg/EvnYVr4S7Y)
+- Tebex Store: [Tebex](https://px-scripts.tebex.io/)
 
 ---
 
 **Made with ❤️ by PX Scripts for the FiveM community**
 
 *This template provides a solid foundation for your FiveM server website. Customize it to match your server's unique identity and requirements.*
+
+---
+
+## 🚧 Coming Soon: React.js Version!
+
+A modern FiveM website template built with **React.js** is in the works. Stay connected for updates and feel free to share your suggestions or feature requests!
+
+- **React.js template coming soon**
+- **Your feedback is welcome!**
+
+Follow this repository or join our Discord to stay updated.

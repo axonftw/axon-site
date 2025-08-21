@@ -1,3 +1,4 @@
+// script.js - Main JavaScript file for the website
 // Scroll Animation
 document.addEventListener('DOMContentLoaded', () => {
     const animateElements = document.querySelectorAll('.animate-on-scroll');
