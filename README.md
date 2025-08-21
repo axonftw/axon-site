@@ -1,6 +1,6 @@
 # 🎮 PX Scripts - FiveM Server Website Template
 
-A modern, responsive, and feature-rich FiveM server website template designed for professional server hosting. This template provides everything you need to showcase your FiveM server with live player statistics, comprehensive information pages, and a sleek user interface.
+A modern, responsive, and feature-rich FiveM server website template designed for professional servers. This template provides everything you need to showcase your FiveM server with live player statistics, comprehensive information pages, and a sleek user interface.
 
 ## ✨ Features
 

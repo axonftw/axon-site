@@ -151,5 +151,6 @@ document.addEventListener('keydown', function(event) {
 updateConnectLink();
 fetchServerInfo();
 
-// Set up periodic updates every 30 seconds
+// Set up periodic updates every 20 seconds
+// This will keep the server status updated without needing a full page reload set according to the server's update frequency
 setInterval(fetchServerInfo, 20000); 
