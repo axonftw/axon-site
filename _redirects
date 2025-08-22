@@ -2,7 +2,7 @@
 https://www.pxscripts.com/* https://pxscripts.com/:splat 301!
 
 # Force HTTPS
-http://mtrp.com/* https://mtrp.com/:splat 301!
+http://pxscripts.com/* https://pxscripts.com/:splat 301!
 
 # Handle 404 errors
 /* /404.html 404
