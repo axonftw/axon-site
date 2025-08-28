@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AXON V3</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -19,22 +19,23 @@
         <button class="md:hidden text-white" onclick="toggleMobileMenu()">
           <i class="fas fa-bars text-2xl"></i>
         </button>
-        <div class="hidden md:flex space-x-8">
-          <a href="index.html" class="nav-link text-white active">Home</a>
+        <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+          <a href="index.html" class="nav-link text-blue-400">Home</a>
           <a href="pages/about.html" class="nav-link text-white">About Us</a>
           <a href="pages/rules.html" class="nav-link text-white">Rules</a>
           <a href="pages/join.html" class="nav-link text-white">Join Us</a>
           <a href="pages/membership.html" class="nav-link text-white">Membership</a>
-        </div>
+        </nav>
       </div>
     </div>
+    <!-- Mobile Nav -->
     <div id="mobileMenu" class="md:hidden hidden bg-black/95">
-      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-        <a href="index.html" class="nav-link text-white active">Home</a>
-        <a href="pages/about.html" class="nav-link text-white">About Us</a>
-        <a href="pages/rules.html" class="nav-link text-white">Rules</a>
-        <a href="pages/join.html" class="nav-link text-white">Join Us</a>
-        <a href="pages/membership.html" class="nav-link text-white">Membership</a>
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4 text-lg">
+        <a href="index.html" class="hover:text-blue-400">Home</a>
+        <a href="pages/about.html" class="hover:text-blue-400">About Us</a>
+        <a href="pages/rules.html" class="hover:text-blue-400">Rules</a>
+        <a href="pages/join.html" class="hover:text-blue-400">Join Us</a>
+        <a href="pages/membership.html" class="hover:text-blue-400">Membership</a>
       </div>
     </div>
   </header>
@@ -45,17 +46,17 @@
     <div class="absolute inset-0 bg-black/50"></div>
     <div class="container mx-auto px-4 z-10 text-center fade-in">
       <img src="logo with text (transparent).png" alt="AXON Full Logo" class="mx-auto h-32 mb-8 hover-lift scale-up" />
-      <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
         <span class="text-white">Welcome to</span> <span class="text-blue-400">AXON V3</span>
       </h1>
       <p class="text-lg md:text-xl text-gray-300 mb-8 fade-up">
         A complete ready-to-use FiveM server with essential scripts, smooth performance, and easy customization.
       </p>
       <div class="flex flex-col md:flex-row justify-center gap-4 fade-up">
-        <a id="connectLink" href="#" target="_blank" class="button-glow bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-semibold flex items-center justify-center gap-2">
+        <a id="connectLink" href="#" target="_blank" class="button-hover button-glow bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-semibold flex items-center justify-center gap-2">
           <i class="fas fa-play-circle"></i> Connect to Server
         </a>
-        <a href="pages/join.html" class="button-glow bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full text-lg font-semibold">
+        <a href="pages/join.html" class="button-hover button-glow bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full text-lg font-semibold">
           How to Join
         </a>
       </div>
@@ -65,7 +66,7 @@
   <!-- Features -->
   <section class="py-20 bg-gray-900">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-extrabold text-center mb-16 text-blue-400">Why Choose AXV3?</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-blue-400">Why Choose AXV3?</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="card-hover card-glow bg-gray-800 p-6 rounded-lg text-center">
           <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-gamepad"></i></div>
@@ -91,10 +92,10 @@
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-8 text-blue-400">Join Our Community</h2>
       <div class="flex flex-wrap justify-center gap-6">
-        <a href="https://discord.gg/X6jabC9pAu" target="_blank" class="button-glow bg-[#5865F2] hover:bg-[#4752C4] text-white px-8 py-4 rounded-lg flex items-center gap-2">
+        <a href="https://discord.gg/X6jabC9pAu" target="_blank" class="button-hover button-glow bg-[#5865F2] hover:bg-[#4752C4] text-white px-8 py-4 rounded-lg flex items-center gap-2">
           <i class="fab fa-discord"></i> Discord
         </a>
-        <a href="https://www.instagram.com/axonftw" target="_blank" class="button-glow bg-gradient-to-r from-[#405DE6] to-[#5851DB] hover:from-[#833AB4] hover:to-[#C13584] text-white px-8 py-4 rounded-lg flex items-center gap-2">
+        <a href="https://www.instagram.com/axonftw" target="_blank" class="button-hover button-glow bg-gradient-to-r from-[#405DE6] to-[#5851DB] hover:from-[#833AB4] hover:to-[#C13584] text-white px-8 py-4 rounded-lg flex items-center gap-2">
           <i class="fab fa-instagram"></i> Instagram
         </a>
       </div>
@@ -104,7 +105,7 @@
   <!-- Server Status -->
   <section class="py-20 bg-gray-800">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-extrabold text-center mb-16 text-blue-400">Server Status</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-blue-400">Server Status</h2>
       <div class="bg-gray-900 rounded-lg p-6 md:p-8 shadow-lg">
         <div class="flex flex-col md:flex-row justify-between items-center mb-8">
           <div class="text-center md:text-left mb-4 md:mb-0">
@@ -138,7 +139,9 @@
   </footer>
 
   <script>
-    function toggleMobileMenu(){ document.getElementById('mobileMenu').classList.toggle('hidden'); }
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
   </script>
   <script src="server-status.js"></script>
 </body>
