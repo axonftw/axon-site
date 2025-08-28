@@ -3,27 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Server Rules — AXV3</title>
+  <title>Rulebook - AXV3</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="../styles.css" />
   <style>
-    /* Keep this page visually identical to your Rules page */
-    .pill {
-      @apply inline-flex items-center rounded-full border border-white/10 bg-gray-800 text-gray-200 px-4 py-2 text-sm md:text-base transition;
-    }
-    .pill:hover { @apply bg-gray-700; }
-    .pill.active { @apply bg-blue-600 border-blue-600 text-white; }
-
-    .rule-card {
-      @apply bg-gray-800 border border-white/10 rounded-2xl p-6 md:p-8;
-    }
-
-    .reveal { opacity:0; transform: translateY(12px); transition: opacity .35s ease, transform .35s ease; }
-    .reveal.visible { opacity:1; transform:none; }
-
-    .backtotop { opacity:0; transform: translateY(6px); pointer-events:none; transition: all .25s ease; }
-    .backtotop.show { opacity:1; transform:none; pointer-events:auto; }
+    /* Keep additions minimal so this page matches the rest */
+    .chip { border: 1px solid rgba(255,255,255,.08); }
+    .chip.active { background: rgb(37 99 235); border-color: rgb(37 99 235); color: #fff; }
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .35s ease, transform .35s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .backtotop { opacity: 0; transform: translateY(6px); pointer-events: none; transition: all .25s ease; }
+    .backtotop.show { opacity: 1; transform: none; pointer-events: auto; }
   </style>
 </head>
 <body class="bg-gray-900 text-white">
@@ -34,128 +25,132 @@
         <a href="../index.html" class="flex items-center space-x-2">
           <img src="../logo (transparent).png" alt="AXV3 Logo" class="h-12 hover-lift">
         </a>
+
         <!-- Mobile -->
-        <button id="mobileBtn" class="md:hidden text-white text-2xl" aria-label="Toggle menu">
-          <i class="fa-solid fa-bars"></i>
+        <button id="mobileBtn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Menu">
+          <i class="fas fa-bars text-2xl"></i>
         </button>
-        <!-- Desktop nav -->
-        <nav class="hidden md:flex space-x-8 font-semibold">
+
+        <!-- Desktop Navigation (same as other pages) -->
+        <nav class="hidden md:flex space-x-8">
           <a href="../index.html" class="nav-link text-white">Home</a>
           <a href="about.html" class="nav-link text-white">About Us</a>
-          <a href="rules.html" class="nav-link text-blue-400">Rules</a>
+          <a href="rules.html" class="nav-link text-white">Rules</a>
           <a href="join.html" class="nav-link text-white">Join Us</a>
           <a href="membership.html" class="nav-link text-white">Membership</a>
         </nav>
       </div>
     </div>
-    <!-- Mobile nav -->
+
+    <!-- Mobile Navigation -->
     <nav id="mobileMenu" class="md:hidden hidden bg-black/95">
-      <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
-        <a href="../index.html" class="nav-link text-white">Home</a>
-        <a href="about.html" class="nav-link text-white">About Us</a>
-        <a href="rules.html" class="nav-link text-blue-400">Rules</a>
-        <a href="join.html" class="nav-link text-white">Join Us</a>
-        <a href="membership.html" class="nav-link text-white">Membership</a>
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <a href="../index.html" class="nav-link text-white py-2">Home</a>
+        <a href="about.html" class="nav-link text-white py-2">About Us</a>
+        <a href="rules.html" class="nav-link text-white py-2">Rules</a>
+        <a href="join.html" class="nav-link text-white py-2">Join Us</a>
+        <a href="membership.html" class="nav-link text-white py-2">Membership</a>
       </div>
     </nav>
   </header>
 
+  <!-- Content -->
   <main class="pt-32 pb-16">
     <div class="container mx-auto px-4 max-w-6xl">
 
-      <!-- Hero (same vibe as Rules page) -->
-      <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-6 hero-title">
-        Server <span class="text-gradient">Rules</span>
+      <!-- Hero (match site) -->
+      <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 hero-title">
+        Server <span class="text-gradient">Rulebook</span>
       </h1>
-      <p class="text-center text-gray-400 mb-8">The complete AXV3 rulebook.</p>
+      <p class="text-center text-gray-400 mb-8">All the AXV3 rules in one clean page.</p>
 
-      <!-- SMALL PILLS (no big glowing box) -->
+      <!-- Chips (same look as other pages) -->
       <div class="flex flex-wrap justify-center gap-3 mb-10 reveal">
-        <a href="#general" class="pill"><i class="fa-solid fa-book mr-2 text-blue-400"></i>General Rules</a>
-        <a href="#engagement" class="pill"><i class="fa-solid fa-handshake mr-2 text-blue-400"></i>Engagement</a>
-        <a href="#ooc" class="pill"><i class="fa-solid fa-comments mr-2 text-blue-400"></i>OOC Rules</a>
-        <a href="#communication" class="pill"><i class="fa-solid fa-phone mr-2 text-blue-400"></i>Communication</a>
-        <a href="#cheating" class="pill"><i class="fa-solid fa-ban mr-2 text-blue-400"></i>Cheating</a>
-        <a href="#roleplay" class="pill"><i class="fa-solid fa-theater-masks mr-2 text-blue-400"></i>Roleplay</a>
-        <a href="#character" class="pill"><i class="fa-solid fa-user mr-2 text-blue-400"></i>Character</a>
+        <a href="#general" class="button-hover chip bg-gray-800 rounded-full px-5 py-2">General</a>
+        <a href="#engagement" class="button-hover chip bg-gray-800 rounded-full px-5 py-2">Engagement</a>
+        <a href="#ooc" class="button-hover chip bg-gray-800 rounded-full px-5 py-2">OOC</a>
+        <a href="#communication" class="button-hover chip bg-gray-800 rounded-full px-5 py-2">Communication</a>
+        <a href="#cheating" class="button-hover chip bg-gray-800 rounded-full px-5 py-2">Cheating</a>
+        <a href="#roleplay" class="button-hover chip bg-gray-800 rounded-full px-5 py-2">Roleplay</a>
+        <a href="#character" class="button-hover chip bg-gray-800 rounded-full px-5 py-2">Character</a>
       </div>
 
-      <!-- CARDS (identical style to your Rules page) -->
-      <section id="general" class="rule-card mb-8 reveal">
+      <!-- Sections (same card style) -->
+      <section id="general" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-8 reveal">
         <div class="flex items-center mb-4">
-          <i class="fa-solid fa-book text-2xl md:text-3xl text-blue-500 mr-4"></i>
+          <i class="fas fa-book text-3xl text-blue-500 mr-4"></i>
           <h2 class="text-2xl font-bold">General Rules</h2>
         </div>
-        <ul class="space-y-3 text-gray-300 list-disc pl-6">
-          <li>Stay updated with all rule changes via our Discord.</li>
-          <li>No erotic roleplay or sexually explicit content.</li>
-          <li>Zero tolerance for racism, trolling, or discrimination of any kind.</li>
-          <li>Avoid using real-life tragic topics (suicide, terrorism, pandemics, etc.) in RP.</li>
+        <ul class="text-gray-300 space-y-3 list-disc pl-6">
+          <li>Stay updated via our Discord announcements.</li>
+          <li>No erotic roleplay or explicit content.</li>
+          <li>Zero tolerance for racism, trolling, or discrimination.</li>
+          <li>Avoid real-life tragic topics (suicide, terrorism, pandemics, etc.) in RP.</li>
         </ul>
       </section>
 
-      <section id="engagement" class="rule-card mb-8 reveal">
+      <section id="engagement" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-8 reveal">
         <div class="flex items-center mb-4">
-          <i class="fa-solid fa-handshake text-2xl md:text-3xl text-blue-500 mr-4"></i>
+          <i class="fas fa-handshake text-3xl text-blue-500 mr-4"></i>
           <h2 class="text-2xl font-bold">Engagement Standards</h2>
         </div>
-        <ul class="space-y-3 text-gray-300 list-disc pl-6">
-          <li>Avoid cop baiting or provoking law enforcement without proper RP context.</li>
-          <li>Roleplay for meaningful interaction, not just wealth accumulation.</li>
+        <ul class="text-gray-300 space-y-3 list-disc pl-6">
+          <li>No cop-baiting or provoking LEOs without proper RP.</li>
+          <li>Focus on meaningful RP, not money grinding.</li>
           <li>Cooperate with EMS during medical scenarios.</li>
         </ul>
       </section>
 
-      <section id="ooc" class="rule-card mb-8 reveal">
+      <section id="ooc" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-8 reveal">
         <div class="flex items-center mb-4">
-          <i class="fa-solid fa-comments text-2xl md:text-3xl text-blue-500 mr-4"></i>
+          <i class="fas fa-comments text-3xl text-blue-500 mr-4"></i>
           <h2 class="text-2xl font-bold">OOC Rules</h2>
         </div>
-        <ul class="space-y-3 text-gray-300 list-disc pl-6">
+        <ul class="text-gray-300 space-y-3 list-disc pl-6">
           <li>Keep OOC discussions in Discord channels only.</li>
           <li>Do not break immersion with OOC talk in-city.</li>
         </ul>
       </section>
 
-      <section id="communication" class="rule-card mb-8 reveal">
+      <section id="communication" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-8 reveal">
         <div class="flex items-center mb-4">
-          <i class="fa-solid fa-phone text-2xl md:text-3xl text-blue-500 mr-4"></i>
+          <i class="fas fa-phone text-3xl text-blue-500 mr-4"></i>
           <h2 class="text-2xl font-bold">Communication Rules</h2>
         </div>
-        <ul class="space-y-3 text-gray-300 list-disc pl-6">
-          <li>Primary language is English (others only if all participants agree).</li>
-          <li>Maintain respectful interactions with staff.</li>
+        <ul class="text-gray-300 space-y-3 list-disc pl-6">
+          <li>Primary language is English (others only if all agree).</li>
+          <li>Always respect staff.</li>
           <li>No excessively loud/offensive voice use toward players.</li>
         </ul>
       </section>
 
-      <section id="cheating" class="rule-card mb-8 reveal">
+      <section id="cheating" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-8 reveal">
         <div class="flex items-center mb-4">
-          <i class="fa-solid fa-ban text-2xl md:text-3xl text-blue-500 mr-4"></i>
+          <i class="fas fa-ban text-3xl text-blue-500 mr-4"></i>
           <h2 class="text-2xl font-bold">Cheating & Exploiting</h2>
         </div>
-        <ul class="space-y-3 text-gray-300 list-disc pl-6">
-          <li>No unfair modifications (speed, regen, teleport, etc.).</li>
-          <li>Visual-only mods that don’t affect balance are allowed.</li>
-          <li>No bug exploitation — gains will be removed and bans issued.</li>
+        <ul class="text-gray-300 space-y-3 list-disc pl-6">
+          <li>No unfair mods (speed, regen, teleport, etc.).</li>
+          <li>Visual-only mods are fine if they don’t affect balance.</li>
+          <li>Exploiting bugs results in bans and removal of gains.</li>
         </ul>
       </section>
 
-      <section id="roleplay" class="rule-card mb-8 reveal">
+      <section id="roleplay" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-8 reveal">
         <div class="flex items-center mb-4">
-          <i class="fa-solid fa-theater-masks text-2xl md:text-3xl text-blue-500 mr-4"></i>
+          <i class="fas fa-theater-masks text-3xl text-blue-500 mr-4"></i>
           <h2 class="text-2xl font-bold">Roleplay Rules</h2>
         </div>
-        <div class="space-y-6 text-gray-300">
+        <div class="text-gray-300 space-y-6">
           <div>
             <h3 class="font-semibold mb-2">Off-Limits Areas</h3>
-            <p>Fort Zancudo and the aircraft carriers are restricted due to heavy security.</p>
+            <p>Fort Zancudo and aircraft carriers are restricted due to heavy security.</p>
           </div>
           <div>
-            <h3 class="font-semibold mb-2">Deathmatch, Revenge & Kill On Sight</h3>
+            <h3 class="font-semibold mb-2">Deathmatch, Revenge & KOS</h3>
             <ul class="list-disc pl-6 space-y-3">
               <li>Vehicle ramming is generally LQRP even if “justified”.</li>
-              <li>Self-defense must be proportional and properly roleplayed.</li>
+              <li>Self-defense must be proportional and roleplayed.</li>
               <li>RDM/VDM is strictly prohibited.</li>
               <li>Always initiate RP and clearly communicate before violence.</li>
             </ul>
@@ -164,7 +159,7 @@
             <h3 class="font-semibold mb-2">New Life Rule (NLR)</h3>
             <ul class="list-disc pl-6 space-y-3">
               <li>Triggered on respawn or hospital treatment.</li>
-              <li>Wait 30 minutes before returning to the scene; 60 minutes before hostility.</li>
+              <li>Wait 30 minutes before returning; 60 minutes before hostility.</li>
               <li>Do not return to concluded scenes.</li>
             </ul>
           </div>
@@ -172,62 +167,63 @@
             <h3 class="font-semibold mb-2">Combat Logging</h3>
             <ul class="list-disc pl-6 space-y-3">
               <li>No disconnect/respawn to avoid consequences.</li>
-              <li>If you crash, reconnect and resume the scenario.</li>
+              <li>If you crash, reconnect and continue.</li>
               <li>No emote abuse for combat advantages.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section id="character" class="rule-card mb-4 reveal">
+      <section id="character" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-4 reveal">
         <div class="flex items-center mb-4">
-          <i class="fa-solid fa-user text-2xl md:text-3xl text-blue-500 mr-4"></i>
+          <i class="fas fa-user text-3xl text-blue-500 mr-4"></i>
           <h2 class="text-2xl font-bold">Character Guidelines</h2>
         </div>
-        <ul class="space-y-3 text-gray-300 list-disc pl-6">
+        <ul class="text-gray-300 space-y-3 list-disc pl-6">
           <li>PD/DOC/DOJ/EMS roles require integrity (no corruption/equipment abuse).</li>
           <li>Keep characters separate; no cross-knowledge between alts.</li>
           <li>Properties inactive for 90 days may be reclaimed.</li>
         </ul>
       </section>
 
-      <!-- Back to top -->
-      <button id="backTop" class="backtotop fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg" aria-label="Back to top">
-        <i class="fa-solid fa-arrow-up text-xl"></i>
+      <!-- Back to Top -->
+      <button id="backTop" class="backtotop fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg button-glow" aria-label="Back to Top">
+        <i class="fas fa-arrow-up text-xl"></i>
       </button>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="bg-black py-8">
     <div class="container mx-auto px-4 text-center">
-      <p class="text-gray-500">© 2025 AXV3. All rights reserved.</p>
+      <p class="text-gray-500">&copy; 2025 AXV3. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    // Mobile menu
+    // Mobile menu toggle
     document.getElementById('mobileBtn').addEventListener('click', () => {
       document.getElementById('mobileMenu').classList.toggle('hidden');
     });
 
-    // Reveal animation on scroll
+    // Reveal on scroll (subtle, like other pages)
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // Smooth scroll + scrollspy for pills
+    // Smooth scroll + chip active state
     const headerOffset = 90;
-    const pills = Array.from(document.querySelectorAll('.pill'));
+    const chips = Array.from(document.querySelectorAll('.chip'));
     const sections = Array.from(document.querySelectorAll('section[id]'));
 
-    pills.forEach(a => {
-      a.addEventListener('click', (e) => {
+    chips.forEach(chip => {
+      chip.addEventListener('click', (e) => {
         e.preventDefault();
-        const id = a.getAttribute('href').slice(1);
+        const id = chip.getAttribute('href').slice(1);
         const el = document.getElementById(id);
-        const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        const top = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top, behavior: 'smooth' });
       });
     });
 
@@ -235,7 +231,7 @@
       const pos = window.scrollY + headerOffset + 10;
       let current = sections[0].id;
       sections.forEach(s => { if (pos >= s.offsetTop) current = s.id; });
-      pills.forEach(p => p.classList.toggle('active', p.getAttribute('href') === '#' + current));
+      chips.forEach(c => c.classList.toggle('active', c.getAttribute('href') === '#' + current));
     }
     window.addEventListener('scroll', spy);
     window.addEventListener('load', spy);
