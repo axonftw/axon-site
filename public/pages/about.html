@@ -5,295 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About - AXV3 RP</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="../styles.css" />
   <style>
-    /* Modal animations */
-    .modal-enter {
-      animation: fadeInScale 0.3s forwards;
-    }
-    .modal-leave {
-      animation: fadeOutScale 0.3s forwards;
-    }
-    @keyframes fadeInScale {
-      0% {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    @keyframes fadeOutScale {
-      0% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-    }
+    .modal-enter { animation: fadeInScale 0.3s forwards; }
+    .modal-leave { animation: fadeOutScale 0.3s forwards; }
+    @keyframes fadeInScale { 0% {opacity:0;transform:scale(0.9);} 100% {opacity:1;transform:scale(1);} }
+    @keyframes fadeOutScale { 0% {opacity:1;transform:scale(1);} 100% {opacity:0;transform:scale(0.9);} }
   </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-950 text-white">
   <!-- Header -->
-  <header
-    class="fixed w-full bg-black/80 backdrop-blur-sm z-50 transition-transform duration-300"
-  >
+  <header class="fixed w-full bg-black/80 backdrop-blur-lg z-50 transition-transform duration-300 shadow-md">
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center py-4">
         <a href="../index.html" class="flex items-center space-x-2">
-          <img
-            src="../logo (transparent).png"
-            alt="PX Scripts Logo"
-            class="h-12 animate__animated animate__fadeIn"
-          />
+          <img src="../logo (transparent).png" alt="AXV3 Logo" class="h-12 animate__animated animate__fadeIn" />
         </a>
-
-        <!-- Mobile Menu Button -->
-        <button
-          class="md:hidden text-white focus:outline-none"
-          aria-label="Toggle Menu"
-          id="mobileMenuButton"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
+        <button id="mobileMenuButton" class="md:hidden text-white focus:outline-none">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
-
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-8">
-          <a href="../index.html" class="nav-link hover:text-blue-500">Home</a>
-          <a href="about.html" class="nav-link hover:text-blue-500 font-semibold"
-            >About Us</a
-          >
-          <a href="rules.html" class="nav-link hover:text-blue-500">Rules</a>
-          <a href="join.html" class="nav-link hover:text-blue-500">Join Us</a>
-          <a href="membership.html" class="nav-link hover:text-blue-500"
-            >Membership</a
-          >
+        <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+          <a href="../index.html" class="hover:text-blue-400 transition">Home</a>
+          <a href="about.html" class="text-blue-400">About Us</a>
+          <a href="rules.html" class="hover:text-blue-400">Rules</a>
+          <a href="join.html" class="hover:text-blue-400">Join Us</a>
+          <a href="membership.html" class="hover:text-blue-400">Membership</a>
         </nav>
       </div>
     </div>
-
-    <!-- Mobile Navigation -->
-    <nav
-      id="mobileMenu"
-      class="md:hidden hidden bg-black/95"
-      aria-label="Mobile Navigation"
-    >
-      <div class="container mx-auto px-4 py-4">
-        <div class="flex flex-col space-y-4">
-          <a href="../index.html" class="nav-link py-2 hover:text-blue-500"
-            >Home</a
-          >
-          <a
-            href="about.html"
-            class="nav-link py-2 hover:text-blue-500 font-semibold"
-            >About Us</a
-          >
-          <a href="rules.html" class="nav-link py-2 hover:text-blue-500">Rules</a>
-          <a href="join.html" class="nav-link py-2 hover:text-blue-500">Join Us</a>
-          <a
-            href="membership.html"
-            class="nav-link py-2 hover:text-blue-500"
-            >Membership</a
-          >
-        </div>
+    <nav id="mobileMenu" class="md:hidden hidden bg-black/95">
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4 text-lg">
+        <a href="../index.html" class="hover:text-blue-400">Home</a>
+        <a href="about.html" class="text-blue-400">About Us</a>
+        <a href="rules.html" class="hover:text-blue-400">Rules</a>
+        <a href="join.html" class="hover:text-blue-400">Join Us</a>
+        <a href="membership.html" class="hover:text-blue-400">Membership</a>
       </div>
     </nav>
   </header>
 
-  <!-- About Hero -->
-  <main class="pt-32 pb-20 bg-gray-900 min-h-screen">
+  <!-- About Content -->
+  <main class="pt-32 pb-20">
     <div class="container mx-auto px-4 max-w-6xl">
-      <h1
-        class="text-4xl md:text-5xl font-bold mb-10 text-center text-white hero-title"
-      >
-        About This Server
-      </h1>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-10 text-center text-blue-400">About AXV3 RP</h1>
 
-      <section
-        class="bg-gray-800 rounded-lg p-6 md:p-10 mb-10 shadow-lg animate__animated animate__fadeIn"
-      >
-        <h2 class="text-2xl font-bold mb-4">Purpose</h2>
-        <p class="text-gray-300 mb-4 leading-relaxed">
-          Welcome to <strong>AXV3 RP</strong>, a custom-built FiveM roleplay server
-          designed for serious players who value realism, quality, and community.
-        </p>
-        <p class="text-gray-300 leading-relaxed">
-          Our goal is to provide a next-generation RP experience with unique
-          scripts, immersive scenarios, and an active, supportive player base.
-        </p>
+      <!-- Purpose Section -->
+      <section class="bg-gray-900 rounded-xl p-8 mb-10 shadow-xl">
+        <h2 class="text-2xl font-bold mb-4">Our Purpose</h2>
+        <p class="text-gray-300 mb-4">Welcome to <strong>AXV3 RP</strong> — a custom-built FiveM roleplay server designed for serious players who value realism, quality, and a supportive community.</p>
+        <p class="text-gray-300">We aim to deliver a next-generation RP experience with custom scripts, immersive scenarios, and a fair environment where creativity thrives.</p>
       </section>
 
+      <!-- Mission & Vision -->
       <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
-        <div
-          class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-blue-600 transition-shadow duration-300 cursor-default"
-        >
-          <h2 class="text-2xl font-bold mb-3">Mission</h2>
-          <p class="text-gray-300 leading-relaxed">
-            Make high-quality, immersive FiveM roleplay accessible to everyone.
-          </p>
+        <div class="bg-gradient-to-br from-blue-900 to-blue-700 rounded-xl p-6 shadow-lg hover:scale-105 transition-transform">
+          <h2 class="text-xl font-semibold mb-3">Our Mission</h2>
+          <p class="text-gray-200">To make immersive and high-quality FiveM roleplay accessible to everyone.</p>
         </div>
-        <div
-          class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-blue-600 transition-shadow duration-300 cursor-default"
-        >
-          <h2 class="text-2xl font-bold mb-3">Vision</h2>
-          <p class="text-gray-300 leading-relaxed">
-            Build a trusted and lasting RP community where creativity, fairness,
-            and fun come first, powered by passionate players and dedicated staff.
-          </p>
+        <div class="bg-gradient-to-br from-purple-900 to-purple-700 rounded-xl p-6 shadow-lg hover:scale-105 transition-transform">
+          <h2 class="text-xl font-semibold mb-3">Our Vision</h2>
+          <p class="text-gray-200">To create a trusted and lasting RP community where fairness, fun, and passion come first.</p>
         </div>
       </section>
 
-      <section
-        class="bg-gray-800 rounded-lg p-6 md:p-10 shadow-lg animate__animated animate__fadeIn"
-      >
-        <h2 class="text-2xl font-bold mb-8 text-center">Meet Our Team</h2>
+      <!-- Team Section -->
+      <section class="bg-gray-900 rounded-xl p-8 shadow-xl">
+        <h2 class="text-2xl font-bold mb-8 text-center text-blue-400">Meet Our Team</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Maintainers -->
-          <div
-            class="text-center cursor-pointer feature-card p-6 rounded-lg bg-blue-700 hover:bg-blue-600 transition-colors"
-            onclick="openModal('ownerModal')"
-            role="button"
-            tabindex="0"
-            aria-label="Open Maintainers Modal"
-            onkeypress="if(event.key === 'Enter') openModal('ownerModal')"
-          >
-            <div
-              class="w-24 h-24 bg-blue-900 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl select-none"
-              aria-hidden="true"
-            >
-              👑
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Maintainers</h3>
-            <p class="text-gray-300">Click to view team</p>
+          <div class="bg-blue-700 p-6 rounded-xl text-center hover:bg-blue-600 transition cursor-pointer" onclick="openModal('ownerModal')">
+            <div class="w-20 h-20 bg-blue-900 rounded-full mx-auto flex items-center justify-center text-3xl mb-4">👑</div>
+            <h3 class="text-lg font-semibold">Maintainers</h3>
+            <p class="text-gray-200 text-sm">Click to view</p>
           </div>
-
-          <!-- Contributors -->
-          <div
-            class="text-center cursor-pointer feature-card p-6 rounded-lg bg-blue-600 hover:bg-blue-500 transition-colors"
-            onclick="openModal('adminModal')"
-            role="button"
-            tabindex="0"
-            aria-label="Open Contributors Modal"
-            onkeypress="if(event.key === 'Enter') openModal('adminModal')"
-          >
-            <div
-              class="w-24 h-24 bg-blue-800 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl select-none"
-              aria-hidden="true"
-            >
-              ⚔️
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Contributors</h3>
-            <p class="text-gray-300">Click to view team</p>
+          <div class="bg-blue-600 p-6 rounded-xl text-center hover:bg-blue-500 transition cursor-pointer" onclick="openModal('adminModal')">
+            <div class="w-20 h-20 bg-blue-800 rounded-full mx-auto flex items-center justify-center text-3xl mb-4">⚔️</div>
+            <h3 class="text-lg font-semibold">Contributors</h3>
+            <p class="text-gray-200 text-sm">Click to view</p>
           </div>
-
-          <!-- Development -->
-          <div
-            class="text-center cursor-pointer feature-card p-6 rounded-lg bg-blue-500 hover:bg-blue-400 transition-colors"
-            onclick="openModal('devModal')"
-            role="button"
-            tabindex="0"
-            aria-label="Open Development Modal"
-            onkeypress="if(event.key === 'Enter') openModal('devModal')"
-          >
-            <div
-              class="w-24 h-24 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl select-none"
-              aria-hidden="true"
-            >
-              🛠️
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Development</h3>
-            <p class="text-gray-300">Click to view team</p>
+          <div class="bg-blue-500 p-6 rounded-xl text-center hover:bg-blue-400 transition cursor-pointer" onclick="openModal('devModal')">
+            <div class="w-20 h-20 bg-blue-700 rounded-full mx-auto flex items-center justify-center text-3xl mb-4">🛠️</div>
+            <h3 class="text-lg font-semibold">Development</h3>
+            <p class="text-gray-200 text-sm">Click to view</p>
           </div>
         </div>
       </section>
     </div>
   </main>
 
+  <!-- Footer -->
+  <footer class="bg-black/80 py-6 text-center text-sm text-gray-500">
+    © 2025 AXON Development. All rights reserved.
+  </footer>
+
   <!-- Modals -->
-  <!-- Maintainers Modal -->
-  <div
-    id="ownerModal"
-    class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="ownerModalTitle"
-  >
-    <div
-      class="bg-gray-800 rounded-lg shadow-xl max-w-lg w-full p-6 relative modal-content"
-    >
-      <button
-        onclick="closeModal('ownerModal')"
-        aria-label="Close Maintainers Modal"
-        class="absolute top-4 right-4 text-gray-400 hover:text-white focus:outline-none text-2xl"
-      >
-        &times;
-      </button>
-      <div class="flex items-center space-x-3 mb-6">
-        <div
-          class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center text-3xl select-none"
-          aria-hidden="true"
-        >
-          👑
-        </div>
-        <h3 id="ownerModalTitle" class="text-2xl font-bold text-white">
-          Server Owner
-        </h3>
-      </div>
-      <ul class="text-gray-300 list-disc list-inside space-y-2">
+  <div id="ownerModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-gray-900 rounded-xl shadow-lg max-w-md w-full p-6 relative modal-content">
+      <button onclick="closeModal('ownerModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+      <h3 class="text-xl font-bold mb-4 flex items-center space-x-2"><span>👑</span> <span>Server Owner</span></h3>
+      <ul class="text-gray-300 space-y-2 list-disc list-inside">
         <li>AXON</li>
       </ul>
     </div>
   </div>
 
-  <!-- Contributors Modal -->
-  <div
-    id="adminModal"
-    class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="adminModalTitle"
-  >
-    <div
-      class="bg-gray-800 rounded-lg shadow-xl max-w-lg w-full p-6 relative modal-content"
-    >
-      <button
-        onclick="closeModal('adminModal')"
-        aria-label="Close Contributors Modal"
-        class="absolute top-4 right-4 text-gray-400 hover:text-white focus:outline-none text-2xl"
-      >
-        &times;
-      </button>
-      <div class="flex items-center space-x-3 mb-6">
-        <div
-          class="w-12 h-12 rounded-full bg-blue-800 flex items-center justify-center text-3xl select-none"
-          aria-hidden="true"
-        >
-          ⚔️
-        </div>
-        <h3 id="adminModalTitle" class="text-2xl font-bold text-white">
-          Admin Team
-        </h3>
-      </div>
-      <ul class="text-gray-300 list-disc list-inside space-y-2">
+  <div id="adminModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-gray-900 rounded-xl shadow-lg max-w-md w-full p-6 relative modal-content">
+      <button onclick="closeModal('adminModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+      <h3 class="text-xl font-bold mb-4 flex items-center space-x-2"><span>⚔️</span> <span>Admin Team</span></h3>
+      <ul class="text-gray-300 space-y-2 list-disc list-inside">
         <li>Name 1</li>
         <li>Name 2</li>
         <li>Name 3</li>
@@ -301,36 +123,11 @@
     </div>
   </div>
 
-  <!-- Development Modal -->
-  <div
-    id="devModal"
-    class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="devModalTitle"
-  >
-    <div
-      class="bg-gray-800 rounded-lg shadow-xl max-w-lg w-full p-6 relative modal-content"
-    >
-      <button
-        onclick="closeModal('devModal')"
-        aria-label="Close Development Modal"
-        class="absolute top-4 right-4 text-gray-400 hover:text-white focus:outline-none text-2xl"
-      >
-        &times;
-      </button>
-      <div class="flex items-center space-x-3 mb-6">
-        <div
-          class="w-12 h-12 rounded-full bg-blue-700 flex items-center justify-center text-3xl select-none"
-          aria-hidden="true"
-        >
-          🛠️
-        </div>
-        <h3 id="devModalTitle" class="text-2xl font-bold text-white">
-          Development Team
-        </h3>
-      </div>
-      <ul class="text-gray-300 list-disc list-inside space-y-2">
+  <div id="devModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-gray-900 rounded-xl shadow-lg max-w-md w-full p-6 relative modal-content">
+      <button onclick="closeModal('devModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+      <h3 class="text-xl font-bold mb-4 flex items-center space-x-2"><span>🛠️</span> <span>Development Team</span></h3>
+      <ul class="text-gray-300 space-y-2 list-disc list-inside">
         <li>Name 1</li>
         <li>Name 2</li>
         <li>Name 3</li>
@@ -339,71 +136,10 @@
   </div>
 
   <script>
-    // Modal open/close
-    function openModal(modalId) {
-      const modal = document.getElementById(modalId);
-      if (!modal) return;
-      modal.classList.remove("hidden");
-      const modalContent = modal.querySelector(".modal-content");
-      modalContent.classList.remove("modal-leave");
-      modalContent.classList.add("modal-enter");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeModal(modalId) {
-      const modal = document.getElementById(modalId);
-      if (!modal) return;
-      const modalContent = modal.querySelector(".modal-content");
-      modalContent.classList.remove("modal-enter");
-      modalContent.classList.add("modal-leave");
-      setTimeout(() => {
-        modal.classList.add("hidden");
-        document.body.style.overflow = "auto";
-      }, 300);
-    }
-
-    // Close modal on clicking outside modal content
-    document.querySelectorAll("[id$='Modal']").forEach((modal) => {
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          closeModal(modal.id);
-        }
-      });
-    });
-
-    // Mobile menu toggle
-    const mobileMenuButton = document.getElementById("mobileMenuButton");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    mobileMenuButton.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-
-    // Navbar hide/show on scroll
-    let lastScroll = 0;
-    const header = document.querySelector("header");
-
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.pageYOffset;
-
-      if (currentScroll <= 0) {
-        header.classList.remove("transform", "-translate-y-full");
-        return;
-      }
-
-      if (currentScroll > lastScroll && !header.classList.contains("transform")) {
-        // Scrolling down
-        header.classList.add("transform", "-translate-y-full");
-      } else if (
-        currentScroll < lastScroll &&
-        header.classList.contains("transform")
-      ) {
-        // Scrolling up
-        header.classList.remove("transform", "-translate-y-full");
-      }
-
-      lastScroll = currentScroll;
-    });
+    function openModal(id){const m=document.getElementById(id);if(!m)return;m.classList.remove('hidden');const c=m.querySelector('.modal-content');c.classList.remove('modal-leave');c.classList.add('modal-enter');document.body.style.overflow='hidden';}
+    function closeModal(id){const m=document.getElementById(id);if(!m)return;const c=m.querySelector('.modal-content');c.classList.remove('modal-enter');c.classList.add('modal-leave');setTimeout(()=>{m.classList.add('hidden');document.body.style.overflow='auto';},300);}
+    document.querySelectorAll('[id$=\"Modal\"]').forEach(m=>{m.addEventListener('click',e=>{if(e.target===m){closeModal(m.id);}});});
+    document.getElementById('mobileMenuButton').addEventListener('click',()=>{document.getElementById('mobileMenu').classList.toggle('hidden');});
   </script>
 </body>
 </html>
