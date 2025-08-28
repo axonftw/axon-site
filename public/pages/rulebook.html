@@ -3,344 +3,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AXV3 – Server Rulebook</title>
+  <title>Rulebook - AXV3</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="../styles.css" />
 </head>
-<body class="bg-gray-900 text-white">
-  <!-- Header -->
+<body class="bg-gray-900">
+  <!-- Header (same across site) -->
   <header class="fixed w-full bg-black/80 backdrop-blur-sm z-50">
     <div class="container mx-auto px-4">
-      <div class="flex justify-between items-center py-4">
+      <div class="flex items-center justify-between py-4">
         <a href="../index.html" class="flex items-center space-x-2">
           <img src="../logo (transparent).png" alt="AXV3 Logo" class="h-12 hover-lift" />
         </a>
 
-        <!-- Mobile Menu Button -->
-        <button class="md:hidden text-white focus:outline-none" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+        <!-- Mobile -->
+        <button class="md:hidden text-white focus:outline-none" onclick="toggleMobileMenu()">
           <i class="fas fa-bars text-2xl"></i>
         </button>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-8">
-          <a href="../index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link">About Us</a>
-          <a href="rules.html" class="nav-link">Rules</a>
-          <a href="join.html" class="nav-link">Join Us</a>
-          <a href="membership.html" class="nav-link">Membership</a>
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="../index.html" class="nav-link text-white">Home</a>
+          <a href="about.html" class="nav-link text-white">About Us</a>
+          <a href="rules.html" class="nav-link text-white">Rules</a>
+          <a href="join.html" class="nav-link text-white">Join Us</a>
+          <a href="membership.html" class="nav-link text-white">Membership</a>
         </nav>
       </div>
     </div>
 
-    <!-- Mobile Navigation -->
-    <nav id="mobileMenu" class="md:hidden hidden bg-black/95" aria-label="Mobile Navigation">
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-black/95">
       <div class="container mx-auto px-4 py-4">
         <div class="flex flex-col space-y-4">
-          <a href="../index.html" class="nav-link py-2">Home</a>
-          <a href="about.html" class="nav-link py-2">About Us</a>
-          <a href="rules.html" class="nav-link py-2">Rules</a>
-          <a href="join.html" class="nav-link py-2">Join Us</a>
-          <a href="membership.html" class="nav-link py-2">Membership</a>
+          <a href="../index.html" class="nav-link text-white py-2">Home</a>
+          <a href="about.html" class="nav-link text-white py-2">About Us</a>
+          <a href="rules.html" class="nav-link text-white py-2">Rules</a>
+          <a href="join.html" class="nav-link text-white py-2">Join Us</a>
+          <a href="membership.html" class="nav-link text-white py-2">Membership</a>
         </div>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <!-- Main -->
+  <!-- Page content -->
   <main class="pt-32 pb-20">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <!-- Hero -->
-      <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-3 text-gradient">Server Rulebook</h1>
-      <p class="text-center text-gray-400 mb-10">All AXV3 rules — same layout and polish as the rest of the site.</p>
+    <div class="container mx-auto px-4 max-w-5xl">
+      <!-- Hero (match other pages) -->
+      <header class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          Server <span class="text-gradient">Rulebook</span>
+        </h1>
+        <p class="text-gray-400 mt-3">All the AXV3 rules in one clean page.</p>
+      </header>
 
-      <!-- Chips (TOC) -->
-      <div class="flex flex-wrap justify-center gap-3 mb-10">
-        <button data-target="general" class="chip active-chip"><i class="fa-solid fa-book mr-2"></i>General Rules</button>
-        <button data-target="engagement" class="chip"><i class="fa-solid fa-handshake mr-2"></i>Engagement</button>
-        <button data-target="ooc" class="chip"><i class="fa-solid fa-comments mr-2"></i>OOC Rules</button>
-        <button data-target="communication" class="chip"><i class="fa-solid fa-phone mr-2"></i>Communication</button>
-        <button data-target="cheating" class="chip"><i class="fa-solid fa-ban mr-2"></i>Cheating</button>
-        <button data-target="roleplay" class="chip"><i class="fa-solid fa-masks-theater mr-2"></i>Roleplay</button>
-        <button data-target="character" class="chip"><i class="fa-solid fa-user mr-2"></i>Character</button>
+      <!-- Section chips (match style from other pages) -->
+      <div id="chips" class="flex flex-wrap items-center justify-center gap-3 mb-10">
+        <a href="#general" class="chip active">General</a>
+        <a href="#engagement" class="chip">Engagement</a>
+        <a href="#ooc" class="chip">OOC</a>
+        <a href="#communication" class="chip">Communication</a>
+        <a href="#cheating" class="chip">Cheating</a>
+        <a href="#roleplay" class="chip">Roleplay</a>
+        <a href="#character" class="chip">Character</a>
       </div>
 
-      <!-- Sections -->
-      <!-- General Rules -->
-      <section id="general" class="card-hover card-glow bg-gray-800/90 rounded-2xl p-8 mb-10">
-        <div class="flex items-center mb-6">
-          <i class="fa-solid fa-book text-3xl text-blue-500 mr-4"></i>
-          <h2 class="text-2xl font-bold">General Rules</h2>
-        </div>
-
-        <div class="space-y-6 text-gray-300">
-          <div class="bg-gray-700/40 p-6 rounded-xl">
-            <h3 class="text-xl font-semibold text-white mb-4">Server Guidelines</h3>
-            <div class="space-y-6">
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Stay Updated</h4>
-                <p>Regularly check our Discord for any updates or modifications to the rules. It's your responsibility to stay informed about any changes that may affect your gameplay.</p>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold mb-2">No Erotic Roleplay</h4>
-                <p>Explicit or sexually suggestive content, including nudity or lewd materials, is strictly prohibited. This extends to all forms of ERP to maintain a professional and respectful environment.</p>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Zero Tolerance Policy</h4>
-                <p>Racism, trolling, discrimination, homophobia, and sexism are not tolerated. We enforce a strict policy against any form of hate speech or discriminatory behavior.</p>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Sensitive Topics</h4>
-                <p>Real-life events such as suicide, terrorism, pandemics, and mental illnesses are not permitted in roleplay. We prioritize the well-being and safety of our community members.</p>
-              </div>
-            </div>
+      <!-- GENERAL -->
+      <section id="general" class="mb-8">
+        <div class="bg-gray-800/90 rounded-2xl p-6 md:p-8 card-glow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-blue-500 text-2xl"><i class="fa-solid fa-book"></i></div>
+            <h2 class="text-2xl font-bold text-white">General Rules</h2>
           </div>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Stay updated via our Discord announcements.</li>
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>No erotic roleplay or explicit content.</li>
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Zero tolerance for racism, trolling, or discrimination.</li>
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Avoid real-life tragic topics (suicide, terrorism, pandemics, etc.) in RP.</li>
+          </ul>
         </div>
       </section>
 
-      <!-- Engagement -->
-      <section id="engagement" class="card-hover card-glow bg-gray-800/90 rounded-2xl p-8 mb-10">
-        <div class="flex items-center mb-6">
-          <i class="fa-solid fa-handshake text-3xl text-blue-500 mr-4"></i>
-          <h2 class="text-2xl font-bold">Engagement Standards</h2>
-        </div>
-
-        <div class="space-y-6 text-gray-300">
-          <div class="bg-gray-700/40 p-6 rounded-xl">
-            <h3 class="text-xl font-semibold text-white mb-4">Player Engagement</h3>
-            <div class="space-y-6">
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Cop Baiting</h4>
-                <p>Intentionally provoking or luring police officers into scenarios without proper roleplay is considered LQRP. Examples include deliberately colliding with police cars to force a chase.</p>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Money Simulator Gameplay</h4>
-                <p>Focus on meaningful interactions rather than just accumulating wealth. Build relationships and create dynamic scenarios that extend beyond finances.</p>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Cooperation with EMS</h4>
-                <p>Refusing to respond to or cooperate with EMS staff can lead to consequences. Engage with EMS as part of realistic roleplay.</p>
-              </div>
-            </div>
+      <!-- ENGAGEMENT -->
+      <section id="engagement" class="mb-8">
+        <div class="bg-gray-800/90 rounded-2xl p-6 md:p-8 card-glow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-blue-500 text-2xl"><i class="fa-solid fa-handshake"></i></div>
+            <h2 class="text-2xl font-bold text-white">Engagement Standards</h2>
           </div>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>No cop-baiting or provoking LEOs without proper RP.</li>
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Focus on meaningful RP, not money grinding.</li>
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Cooperate with EMS during medical scenarios.</li>
+          </ul>
         </div>
       </section>
 
       <!-- OOC -->
-      <section id="ooc" class="card-hover card-glow bg-gray-800/90 rounded-2xl p-8 mb-10">
-        <div class="flex items-center mb-6">
-          <i class="fa-solid fa-comments text-3xl text-blue-500 mr-4"></i>
-          <h2 class="text-2xl font-bold">OOC Rules</h2>
-        </div>
-
-        <div class="space-y-6 text-gray-300">
-          <div class="bg-gray-700/40 p-6 rounded-xl">
-            <h3 class="text-xl font-semibold text-white mb-4">Out of Character Guidelines</h3>
-            <ul class="space-y-4">
-              <li class="flex items-start">
-                <i class="fa-solid fa-circle-check text-blue-500 mt-1 mr-3"></i>
-                <p>Conduct out-of-character discussions only in Discord channels.</p>
-              </li>
-              <li class="flex items-start">
-                <i class="fa-solid fa-circle-check text-blue-500 mt-1 mr-3"></i>
-                <p>Avoid using immersion-breaking language.</p>
-              </li>
-            </ul>
+      <section id="ooc" class="mb-8">
+        <div class="bg-gray-800/90 rounded-2xl p-6 md:p-8 card-glow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-blue-500 text-2xl"><i class="fa-solid fa-comments"></i></div>
+            <h2 class="text-2xl font-bold text-white">OOC Rules</h2>
           </div>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Keep OOC discussions in Discord channels only.</li>
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Avoid immersion-breaking language.</li>
+          </ul>
         </div>
       </section>
 
-      <!-- Communication -->
-      <section id="communication" class="card-hover card-glow bg-gray-800/90 rounded-2xl p-8 mb-10">
-        <div class="flex items-center mb-6">
-          <i class="fa-solid fa-phone text-3xl text-blue-500 mr-4"></i>
-          <h2 class="text-2xl font-bold">Communication Rules</h2>
+      <!-- COMMUNICATION -->
+      <section id="communication" class="mb-8">
+        <div class="bg-gray-800/90 rounded-2xl p-6 md:p-8 card-glow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-blue-500 text-2xl"><i class="fa-solid fa-phone"></i></div>
+            <h2 class="text-2xl font-bold text-white">Communication Rules</h2>
+          </div>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Primary language: English (others only if all parties agree).</li>
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Be respectful to staff; hostile behavior can lead to removal.</li>
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>No excessively loud/offensive voice comms.</li>
+          </ul>
         </div>
+      </section>
 
-        <div class="space-y-6 text-gray-300">
-          <div class="bg-gray-700/40 p-6 rounded-xl">
-            <h3 class="text-xl font-semibold text-white mb-4">Communication Guidelines</h3>
-            <div class="space-y-6">
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Language Requirements</h4>
-                <p>Communication must be in English. Other languages are okay if all parties agree, but English is the server standard.</p>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Respect for Staff</h4>
-                <p>Maintain respectful interactions with staff. Combative behavior or creating issues may result in removal.</p>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Voice Communication</h4>
-                <p>Excessively loud or targeted offensive language is not tolerated. Staff may address misuse of in-character exceptions.</p>
-              </div>
+      <!-- CHEATING -->
+      <section id="cheating" class="mb-8">
+        <div class="bg-gray-800/90 rounded-2xl p-6 md:p-8 card-glow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-blue-500 text-2xl"><i class="fa-solid fa-ban"></i></div>
+            <h2 class="text-2xl font-bold text-white">Cheating & Exploiting</h2>
+          </div>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>No unfair mods (speed, regen, teleport, etc.).</li>
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Visual mods are fine if they don’t affect balance.</li>
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Exploiting bugs leads to bans; gained benefits removed.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ROLEPLAY -->
+      <section id="roleplay" class="mb-8">
+        <div class="bg-gray-800/90 rounded-2xl p-6 md:p-8 card-glow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-blue-500 text-2xl"><i class="fa-solid fa-masks-theater"></i></div>
+            <h2 class="text-2xl font-bold text-white">Roleplay Rules</h2>
+          </div>
+
+          <div class="space-y-8 text-gray-300">
+            <div>
+              <h3 class="text-white font-semibold mb-2">Off-Limits Areas</h3>
+              <p>Fort Zancudo and aircraft carriers are restricted due to heavy security.</p>
+            </div>
+
+            <div>
+              <h3 class="text-white font-semibold mb-2">Deathmatch / Revenge / KOS</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Running people over is almost always LQRP.</li>
+                <li>Self-defense must match context and be roleplayed.</li>
+                <li><strong>RDM/VDM</strong> is strictly prohibited.</li>
+                <li>Initiate RP and communicate before any shootout.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-white font-semibold mb-2">New Life Rule (NLR)</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Triggers when you respawn or are treated at hospital.</li>
+                <li>Wait 30 minutes before returning to the scene.</li>
+                <li>No hostile actions against the responsible party for 60 minutes.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-white font-semibold mb-2">Combat / Logging</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>No disconnecting/respawning to avoid consequences.</li>
+                <li>If you crash, try to reconnect and continue RP.</li>
+                <li>No emote abuse to gain combat advantages.</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Cheating -->
-      <section id="cheating" class="card-hover card-glow bg-gray-800/90 rounded-2xl p-8 mb-10">
-        <div class="flex items-center mb-6">
-          <i class="fa-solid fa-ban text-3xl text-blue-500 mr-4"></i>
-          <h2 class="text-2xl font-bold">Cheating & Exploiting</h2>
-        </div>
-
-        <div class="space-y-6 text-gray-300">
-          <div class="bg-gray-700/40 p-6 rounded-xl">
-            <h3 class="text-xl font-semibold text-white mb-4">Anti-Cheat Guidelines</h3>
-            <div class="space-y-6">
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Unfair Modifications</h4>
-                <p>Mods that provide unfair advantages (speed hacks, regen, teleport, etc.) are strictly prohibited.</p>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Permissible Mods</h4>
-                <p>Purely visual enhancements are allowed. Key binds to server commands are fine if they don’t grant advantages.</p>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Bug Exploitation</h4>
-                <p>Abusing client/server bugs is strictly prohibited and will result in bans and removal of gains.</p>
-              </div>
-            </div>
+      <!-- CHARACTER -->
+      <section id="character">
+        <div class="bg-gray-800/90 rounded-2xl p-6 md:p-8 card-glow">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-blue-500 text-2xl"><i class="fa-solid fa-user"></i></div>
+            <h2 class="text-2xl font-bold text-white">Character Guidelines</h2>
           </div>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Official roles (PD/DOC/DOJ/EMS) require integrity & professionalism.</li>
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Keep characters separate; no cross-knowledge.</li>
+            <li class="flex gap-3"><span class="text-blue-500 pt-1"><i class="fa-solid fa-circle-check"></i></span>Properties may be removed after 90 days of inactivity.</li>
+          </ul>
         </div>
       </section>
-
-      <!-- Roleplay -->
-      <section id="roleplay" class="card-hover card-glow bg-gray-800/90 rounded-2xl p-8 mb-10">
-        <div class="flex items-center mb-6">
-          <i class="fa-solid fa-masks-theater text-3xl text-blue-500 mr-4"></i>
-          <h2 class="text-2xl font-bold">Roleplay Rules</h2>
-        </div>
-
-        <div class="space-y-6 text-gray-300">
-          <div class="bg-gray-700/40 p-6 rounded-xl mb-6">
-            <h3 class="text-xl font-semibold text-white mb-4">Off-Limits Areas</h3>
-            <p>Fort Zancudo and aircraft carriers are off-limits due to heavy security.</p>
-          </div>
-
-          <div class="bg-gray-700/40 p-6 rounded-xl mb-6">
-            <h3 class="text-xl font-semibold text-white mb-4">Deathmatch, Revenge, KOS</h3>
-            <ul class="space-y-4 list-disc pl-6">
-              <li><strong>LQRP:</strong> Intentionally running over individuals can still be LQRP even if “justified”; focus on immersion.</li>
-              <li><strong>Self-Defense:</strong> You may respond if attacked or property is harmed. Keep responses proportional and roleplayed.</li>
-              <li><strong>RDM:</strong> Never harm/kill without valid IC reason & proper roleplay.</li>
-              <li><strong>VDM:</strong> Never use vehicles to harm without valid IC justification (and even then, it may be LQRP).</li>
-              <li><strong>Initiation:</strong> Before any shootout or violent action, initiate roleplay and communicate intentions.</li>
-            </ul>
-          </div>
-
-          <div class="bg-gray-700/40 p-6 rounded-xl mb-6">
-            <h3 class="text-xl font-semibold text-white mb-4">New Life Rule (NLR)</h3>
-            <ul class="space-y-4 list-disc pl-6">
-              <li><strong>Trigger:</strong> When you respawn or are treated at hospital after being incapacitated.</li>
-              <li><strong>Return:</strong> Wait 30 minutes before returning to the scene. No looting/evidence collection.</li>
-              <li><strong>Hostility:</strong> No hostile actions against the responsible party for 60 minutes.</li>
-              <li><strong>Closed Scenes:</strong> Don’t return to concluded scenarios.</li>
-            </ul>
-          </div>
-
-          <div class="bg-gray-700/40 p-6 rounded-xl mb-6">
-            <h3 class="text-xl font-semibold text-white mb-4">Combat RP Logging</h3>
-            <ul class="space-y-4 list-disc pl-6">
-              <li>Do not disconnect/respawn to avoid IC consequences.</li>
-              <li>If you crash, try to reconnect and resume the scene.</li>
-              <li>Do not use emotes to gain unfair combat advantage.</li>
-            </ul>
-          </div>
-
-          <div class="bg-gray-700/40 p-6 rounded-xl mb-6">
-            <h3 class="text-xl font-semibold text-white mb-4">Metagaming, Powergaming, Torture RP</h3>
-            <ul class="space-y-4 list-disc pl-6">
-              <li><strong>Metagaming:</strong> Using OOC info for IC advantage is a serious offense.</li>
-              <li><strong>Streaming:</strong> Players in the city may not appear in others’ streams who are also in the city.</li>
-              <li><strong>Powergaming:</strong> Don’t roleplay nonexistent abilities or force outcomes with no choices. (e.g., spam jumping, unfair cuff/escort, flipping cars, etc.)</li>
-              <li><strong>Vehicles:</strong> No vehicles with unbreakable/tiny/covered windows or unfair advantages for crime.</li>
-              <li><strong>Torture RP:</strong> Requires explicit consent from all parties via /me; stop immediately if anyone is uncomfortable.</li>
-            </ul>
-          </div>
-
-          <div class="bg-gray-700/40 p-6 rounded-xl mb-6">
-            <h3 class="text-xl font-semibold text-white mb-4">Prison Roleplay</h3>
-            <ul class="space-y-4 list-disc pl-6">
-              <li>Lifers may not break out without staff approval (open a ticket).</li>
-              <li>Always roleplay as if DOC is present, even if none are online.</li>
-              <li>Breaking in without a valid plan is LQRP. Don’t use teleports unless you’re an active prisoner.</li>
-              <li>EMS may transport inmates for required medical procedures.</li>
-            </ul>
-          </div>
-
-          <div class="bg-gray-700/40 p-6 rounded-xl mb-6">
-            <h3 class="text-xl font-semibold text-white mb-4">Private Discords</h3>
-            <ul class="space-y-4 list-disc pl-6">
-              <li>Any AXV3-related Discords with IC channels must follow AXV3 rules.</li>
-              <li>Clearly label which channels are in-character.</li>
-              <li>Businesses/gangs must post invite links in the main AXV3 Discord.</li>
-              <li>Staff may request access for compliance; refusal can lead to action.</li>
-              <li>Provide accurate evidence to staff when requested.</li>
-            </ul>
-          </div>
-
-          <div class="bg-gray-700/40 p-6 rounded-xl">
-            <h3 class="text-xl font-semibold text-white mb-4">Criminal Activities</h3>
-            <ul class="space-y-4 list-disc pl-6">
-              <li><strong>5-Man Rule:</strong> Max five participants until the scenario is resolved; no outside interference.</li>
-              <li><strong>Mechanics:</strong> May not use job powers during crime scenes.</li>
-              <li><strong>Groups:</strong> Separate groups may not “combine” objectives during the same crime.</li>
-              <li><strong>Prison Transports:</strong> Treated as a new scenario; you may assemble a fresh group of up to five.</li>
-              <li><strong>No Fake Hostages.</strong></li>
-              <li><strong>Major Robberies:</strong> Require real planning; simple evasion is not enough.</li>
-              <li><strong>Robbing Players:</strong> Allowed with high-quality RP and justified context. Focus on RP quality.</li>
-              <li><strong>Cooldowns:</strong> Store/Car Boosts: 45m • Vangelico: 90m • Fleeca/Trucks/Drugs: 120m • G6/Paleto/Pacific: 180m.</li>
-              <li><strong>Teleport Areas:</strong> No robbing where “teleport” options exist.</li>
-              <li><strong>Scams:</strong> Must be in-game RP with valid reason; no exploiting menus/teleports (except F2 inventory).</li>
-              <li><strong>Gov Employees:</strong> Don’t rob PD/DOJ/EMS purely for belongings.</li>
-              <li><strong>Interference:</strong> Only if on turf or if store owners intervene; not for revenge.</li>
-              <li><strong>Restart Windows:</strong> No major crimes 60m before / 30m after restart; all crime banned 30m before/after restart.</li>
-              <li><strong>Shooting Cooldown:</strong> 90 minutes for all scenarios.</li>
-              <li><strong>Camping:</strong> Don’t camp/stake out crime spots. Check, then leave for 5 minutes before returning.</li>
-              <li><strong>Unscheduled Restarts:</strong> Wait 15 minutes after a crash/restart before resuming crime.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Character -->
-      <section id="character" class="card-hover card-glow bg-gray-800/90 rounded-2xl p-8">
-        <div class="flex items-center mb-6">
-          <i class="fa-solid fa-user text-3xl text-blue-500 mr-4"></i>
-          <h2 class="text-2xl font-bold">Character Guidelines</h2>
-        </div>
-
-        <div class="space-y-6 text-gray-300">
-          <div class="bg-gray-700/40 p-6 rounded-xl">
-            <h3 class="text-xl font-semibold text-white mb-4">Character Development</h3>
-            <div class="space-y-6">
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Integrity for Official Roles</h4>
-                <p>Police, DOC, DOJ, and EMS must maintain professionalism and avoid corruption or misuse of equipment.</p>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Character Separation</h4>
-                <p>Each character operates independently with no cross-knowledge outside established RP.</p>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Property Management</h4>
-                <p>Properties may be removed after 90 days of inactivity. Sporadic logins to bypass this will not prevent removal.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Back to top -->
-      <button onclick="scrollToTop()" class="fixed bottom-6 right-6 button-hover button-glow bg-blue-600 hover:bg-blue-700 p-4 rounded-full shadow-lg" aria-label="Back to top">
-        <i class="fa-solid fa-arrow-up text-xl"></i>
-      </button>
     </div>
+
+    <!-- Back to top -->
+    <button onclick="scrollToTop()"
+            class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-lg button-glow"
+            aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up text-lg"></i>
+    </button>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (same across site) -->
   <footer class="bg-black py-8">
     <div class="container mx-auto px-4 text-center">
       <p class="text-gray-500">&copy; 2025 AXV3. All rights reserved.</p>
@@ -348,57 +221,55 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
-    function toggleMobileMenu() {
-      const mobileMenu = document.getElementById('mobileMenu');
-      mobileMenu.classList.toggle('hidden');
-    }
-
-    // Smooth scroll to section (chips)
-    function scrollToSection(id) {
-      const target = document.getElementById(id);
-      const headerOffset = 90;
-      const y = target.getBoundingClientRect().top + window.scrollY - headerOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-
-    // Chip click -> scroll
-    document.querySelectorAll('.chip').forEach(chip => {
-      chip.addEventListener('click', () => scrollToSection(chip.dataset.target));
+    // chip styling reused everywhere
+    document.querySelectorAll('.chip').forEach(el => {
+      el.classList.add(
+        'inline-flex','items-center','px-4','py-2','rounded-full',
+        'bg-gray-800/80','border','border-gray-700',
+        'text-sm','text-gray-200','hover:border-blue-500','hover:bg-gray-800','transition'
+      );
     });
-
-    // Active chip on scroll
-    const chips = document.querySelectorAll('.chip');
-    const sections = [...document.querySelectorAll('section')];
-    const activateChip = (id) => {
-      chips.forEach(c => c.classList.remove('active-chip'));
-      const current = [...chips].find(c => c.dataset.target === id);
-      if (current) current.classList.add('active-chip');
+    const setActiveChip = (id) => {
+      document.querySelectorAll('#chips a').forEach(a => {
+        a.classList.remove('active','!bg-blue-600','!border-blue-500','!text-white');
+        if (a.getAttribute('href') === `#${id}`) {
+          a.classList.add('active','!bg-blue-600','!border-blue-500','!text-white');
+        }
+      });
     };
 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) activateChip(e.target.id);
+    // Mobile menu
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+
+    // Smooth anchor scroll
+    document.querySelectorAll('#chips a').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        const headerOffset = 90;
+        const offsetTop = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        setActiveChip(id);
       });
-    }, { root: null, rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+    });
 
-    sections.forEach(s => io.observe(s));
+    // Scroll spy
+    const sections = [...document.querySelectorAll('main section[id]')];
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + 120;
+      let current = sections[0]?.id;
+      for (const s of sections) {
+        if (scrollPos >= s.offsetTop) current = s.id;
+      }
+      if (current) setActiveChip(current);
+    });
 
-    // Back to top
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
-
-  <!-- Page-specific utility styles (built with Tailwind classes in JS) -->
-  <style>
-    /* Chip pill matches other pages */
-    .chip {
-      @apply px-4 py-2 rounded-full bg-gray-800/80 text-gray-200 border border-gray-700 hover:bg-gray-700 transition;
-    }
-    .active-chip {
-      @apply bg-blue-600 text-white border-blue-500;
-    }
-  </style>
 </body>
 </html>
