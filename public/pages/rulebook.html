@@ -3,271 +3,279 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AXV3 • Detailed Rulebook</title>
+  <title>Rulebook - AXV3</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css">
   <style>
-    /* Local polish so it looks the same even without styles.css changes */
-    .text-gradient{background:linear-gradient(90deg,#60a5fa,#2563eb);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .card{background:#111827;border:1px solid rgba(255,255,255,.06)}
-    .surface{background:#0b1220}
-    .pill{border:1px solid rgba(255,255,255,.08)}
-    .hover-lift{transition:transform .2s ease} .hover-lift:hover{transform:translateY(-2px)}
-    .reveal{opacity:0;transform:translateY(14px);transition:.45s ease} .reveal.visible{opacity:1;transform:none}
-    .toc a.active{background:#2563eb;border-color:#2563eb}
-    .backtotop{opacity:0;transform:translateY(8px);pointer-events:none;transition:.25s}
-    .backtotop.show{opacity:1;transform:none;pointer-events:auto}
+    /* Page-local polish that matches your global look */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .45s ease, transform .45s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .toc-chip.active { background: rgb(37 99 235); border-color: rgb(37 99 235); color: #fff; }
+    .backtotop { opacity: 0; transform: translateY(6px); pointer-events: none; transition: all .25s ease; }
+    .backtotop.show { opacity: 1; transform: none; pointer-events: auto; }
   </style>
 </head>
 <body class="bg-gray-900 text-white">
   <!-- Header -->
   <header class="fixed w-full bg-black/80 backdrop-blur-sm z-50">
     <div class="container mx-auto px-4">
-      <div class="flex items-center justify-between py-4">
-        <a href="../index.html" class="flex items-center space-x-2 hover-lift">
-          <img src="../logo (transparent).png" alt="AXV3" class="h-12">
+      <div class="flex justify-between items-center py-4">
+        <a href="../index.html" class="flex items-center space-x-2">
+          <img src="../logo (transparent).png" alt="AXV3 Logo" class="h-12 hover-lift">
         </a>
-        <button class="md:hidden text-white text-2xl" id="mobileBtn"><i class="fa-solid fa-bars"></i></button>
-        <nav class="hidden md:flex items-center gap-8 font-semibold">
-          <a href="../index.html" class="hover:text-blue-400">Home</a>
-          <a href="about.html" class="hover:text-blue-400">About Us</a>
-          <a href="rules.html" class="text-blue-400">Rules</a>
-          <a href="join.html" class="hover:text-blue-400">Join Us</a>
-          <a href="membership.html" class="hover:text-blue-400">Membership</a>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-white focus:outline-none" aria-label="Toggle Menu" id="mobileBtn">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="../index.html" class="nav-link text-white">Home</a>
+          <a href="about.html" class="nav-link text-white">About Us</a>
+          <a href="rules.html" class="nav-link text-white">Rules</a>
+          <a href="join.html" class="nav-link text-white">Join Us</a>
+          <a href="membership.html" class="nav-link text-white">Membership</a>
         </nav>
       </div>
     </div>
-    <nav id="mobileNav" class="hidden md:hidden bg-black/95">
-      <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
-        <a href="../index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="rules.html" class="text-blue-400">Rules</a>
-        <a href="join.html">Join Us</a>
-        <a href="membership.html">Membership</a>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobileMenu" class="md:hidden hidden bg-black/95" aria-label="Mobile Navigation">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex flex-col space-y-4">
+          <a href="../index.html" class="nav-link text-white py-2">Home</a>
+          <a href="about.html" class="nav-link text-white py-2">About Us</a>
+          <a href="rules.html" class="nav-link text-white py-2">Rules</a>
+          <a href="join.html" class="nav-link text-white py-2">Join Us</a>
+          <a href="membership.html" class="nav-link text-white py-2">Membership</a>
+        </div>
       </div>
     </nav>
   </header>
 
+  <!-- Hero -->
   <main class="pt-32 pb-16">
     <div class="container mx-auto px-4 max-w-6xl">
-      <!-- Title -->
-      <div class="text-center mb-8 reveal">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-2 text-gradient">Server Rulebook</h1>
-        <p class="text-gray-400">The definitive AXV3 rules. Keep this page handy.</p>
-      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-center text-white mb-6 hero-title">
+        Server <span class="text-gradient">Rulebook</span>
+      </h1>
+      <p class="text-center text-gray-400 mb-10">The complete AXV3 rules — same look, clearer layout.</p>
 
       <!-- TOC -->
-      <section class="card rounded-xl p-6 md:p-8 mb-10 reveal">
+      <section class="card-hover card-glow bg-gray-800 p-6 md:p-8 rounded-lg mb-10 reveal">
         <h2 class="text-2xl font-bold mb-6">Table of Contents</h2>
-        <div class="toc grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          <a class="pill rounded-lg px-5 py-3 bg-gray-800/60 hover:bg-gray-800 transition flex items-center" href="#general">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <a href="#general" class="toc-chip button-hover bg-gray-800/70 border border-white/10 text-white px-5 py-3 rounded-lg flex items-center">
             <i class="fa-solid fa-book mr-3 text-blue-400"></i> General Rules
           </a>
-          <a class="pill rounded-lg px-5 py-3 bg-gray-800/60 hover:bg-gray-800 transition flex items-center" href="#engagement">
+          <a href="#engagement" class="toc-chip button-hover bg-gray-800/70 border border-white/10 text-white px-5 py-3 rounded-lg flex items-center">
             <i class="fa-solid fa-handshake mr-3 text-blue-400"></i> Engagement Standards
           </a>
-          <a class="pill rounded-lg px-5 py-3 bg-gray-800/60 hover:bg-gray-800 transition flex items-center" href="#ooc">
+          <a href="#ooc" class="toc-chip button-hover bg-gray-800/70 border border-white/10 text-white px-5 py-3 rounded-lg flex items-center">
             <i class="fa-solid fa-comments mr-3 text-blue-400"></i> OOC Rules
           </a>
-          <a class="pill rounded-lg px-5 py-3 bg-gray-800/60 hover:bg-gray-800 transition flex items-center" href="#communication">
+          <a href="#communication" class="toc-chip button-hover bg-gray-800/70 border border-white/10 text-white px-5 py-3 rounded-lg flex items-center">
             <i class="fa-solid fa-phone mr-3 text-blue-400"></i> Communication Rules
           </a>
-          <a class="pill rounded-lg px-5 py-3 bg-gray-800/60 hover:bg-gray-800 transition flex items-center" href="#cheating">
+          <a href="#cheating" class="toc-chip button-hover bg-gray-800/70 border border-white/10 text-white px-5 py-3 rounded-lg flex items-center">
             <i class="fa-solid fa-ban mr-3 text-blue-400"></i> Cheating & Exploiting
           </a>
-          <a class="pill rounded-lg px-5 py-3 bg-gray-800/60 hover:bg-gray-800 transition flex items-center" href="#roleplay">
+          <a href="#roleplay" class="toc-chip button-hover bg-gray-800/70 border border-white/10 text-white px-5 py-3 rounded-lg flex items-center">
             <i class="fa-solid fa-theater-masks mr-3 text-blue-400"></i> Roleplay Rules
           </a>
-          <a class="pill rounded-lg px-5 py-3 bg-gray-800/60 hover:bg-gray-800 transition flex items-center" href="#character">
+          <a href="#character" class="toc-chip button-hover bg-gray-800/70 border border-white/10 text-white px-5 py-3 rounded-lg flex items-center">
             <i class="fa-solid fa-user mr-3 text-blue-400"></i> Character Guidelines
           </a>
         </div>
       </section>
 
       <!-- Sections -->
-      <section id="general" class="card rounded-xl p-8 mb-10 reveal">
+      <section id="general" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-10 reveal">
         <div class="flex items-center mb-6">
-          <i class="fa-solid fa-book text-3xl text-blue-500 mr-4"></i>
-          <h3 class="text-2xl font-bold">General Rules</h3>
+          <i class="fas fa-book text-3xl text-blue-500 mr-4"></i>
+          <h2 class="text-2xl font-bold">General Rules</h2>
         </div>
         <div class="space-y-6 text-gray-300">
-          <div class="bg-gray-800/60 p-6 rounded-lg">
-            <h4 class="text-xl font-semibold mb-4">Server Guidelines</h4>
+          <div class="bg-gray-700/40 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4">Server Guidelines</h3>
             <ul class="space-y-3 list-disc pl-6">
-              <li>Stay updated via Discord announcements.</li>
-              <li>No ERP or sexually explicit content.</li>
+              <li>Stay updated via our Discord announcements.</li>
+              <li>No erotic roleplay or explicit content.</li>
               <li>Zero tolerance for racism, trolling, or discrimination.</li>
-              <li>Avoid real-life tragic topics (suicide, terrorism, pandemics, etc.) in RP.</li>
+              <li>Avoid using real-life tragic topics (suicide, terrorism, pandemics, etc.) in RP.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section id="engagement" class="card rounded-xl p-8 mb-10 reveal">
+      <section id="engagement" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-10 reveal">
         <div class="flex items-center mb-6">
-          <i class="fa-solid fa-handshake text-3xl text-blue-500 mr-4"></i>
-          <h3 class="text-2xl font-bold">Engagement Standards</h3>
+          <i class="fas fa-handshake text-3xl text-blue-500 mr-4"></i>
+          <h2 class="text-2xl font-bold">Engagement Standards</h2>
         </div>
-        <div class="bg-gray-800/60 p-6 rounded-lg text-gray-300">
-          <h4 class="text-xl font-semibold mb-4">Player Engagement</h4>
+        <div class="bg-gray-700/40 p-6 rounded-lg text-gray-300">
+          <h3 class="text-xl font-semibold mb-4">Player Engagement</h3>
           <ul class="list-disc pl-6 space-y-3">
             <li>No cop-baiting or provoking LEOs without proper RP.</li>
-            <li>Prioritize meaningful interaction over money grinding.</li>
+            <li>Focus on meaningful RP, not just money grinding.</li>
             <li>Cooperate with EMS during medical scenarios.</li>
           </ul>
         </div>
       </section>
 
-      <section id="ooc" class="card rounded-xl p-8 mb-10 reveal">
+      <section id="ooc" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-10 reveal">
         <div class="flex items-center mb-6">
-          <i class="fa-solid fa-comments text-3xl text-blue-500 mr-4"></i>
-          <h3 class="text-2xl font-bold">OOC Rules</h3>
+          <i class="fas fa-comments text-3xl text-blue-500 mr-4"></i>
+          <h2 class="text-2xl font-bold">OOC Rules</h2>
         </div>
-        <div class="bg-gray-800/60 p-6 rounded-lg text-gray-300">
+        <div class="bg-gray-700/40 p-6 rounded-lg text-gray-300">
           <ul class="list-disc pl-6 space-y-3">
-            <li>OOC chats stay in Discord only.</li>
-            <li>Don’t break immersion with OOC talk in-city.</li>
+            <li>Keep OOC discussions in Discord only.</li>
+            <li>Do not break immersion with OOC talk in-city.</li>
           </ul>
         </div>
       </section>
 
-      <section id="communication" class="card rounded-xl p-8 mb-10 reveal">
+      <section id="communication" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-10 reveal">
         <div class="flex items-center mb-6">
-          <i class="fa-solid fa-phone text-3xl text-blue-500 mr-4"></i>
-          <h3 class="text-2xl font-bold">Communication Rules</h3>
+          <i class="fas fa-phone text-3xl text-blue-500 mr-4"></i>
+          <h2 class="text-2xl font-bold">Communication Rules</h2>
         </div>
-        <div class="bg-gray-800/60 p-6 rounded-lg text-gray-300">
+        <div class="bg-gray-700/40 p-6 rounded-lg text-gray-300">
           <ul class="list-disc pl-6 space-y-3">
-            <li>Primary language is English; others only if all agree.</li>
+            <li>Primary language is English (others only if all participants agree).</li>
             <li>Respect staff at all times.</li>
-            <li>No excessively loud/offensive voice use at players.</li>
+            <li>No excessively loud or offensive voice use toward players.</li>
           </ul>
         </div>
       </section>
 
-      <section id="cheating" class="card rounded-xl p-8 mb-10 reveal">
+      <section id="cheating" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-10 reveal">
         <div class="flex items-center mb-6">
-          <i class="fa-solid fa-ban text-3xl text-blue-500 mr-4"></i>
-          <h3 class="text-2xl font-bold">Cheating & Exploiting</h3>
+          <i class="fas fa-ban text-3xl text-blue-500 mr-4"></i>
+          <h2 class="text-2xl font-bold">Cheating & Exploiting</h2>
         </div>
-        <div class="bg-gray-800/60 p-6 rounded-lg text-gray-300">
+        <div class="bg-gray-700/40 p-6 rounded-lg text-gray-300">
           <ul class="list-disc pl-6 space-y-3">
-            <li>No unfair mods (speed, regen, TP, etc.).</li>
-            <li>Cosmetic/visual mods that don’t affect balance are fine.</li>
-            <li>No bug exploitation; gains will be wiped + bans issued.</li>
+            <li>No unfair mods (speed hacks, regen, teleport, etc.).</li>
+            <li>Visual-only mods are fine if they don’t affect gameplay balance.</li>
+            <li>No bug exploitation; gains will be removed and bans issued.</li>
           </ul>
         </div>
       </section>
 
-      <section id="roleplay" class="card rounded-xl p-8 mb-10 reveal">
+      <section id="roleplay" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-10 reveal">
         <div class="flex items-center mb-6">
-          <i class="fa-solid fa-theater-masks text-3xl text-blue-500 mr-4"></i>
-          <h3 class="text-2xl font-bold">Roleplay Rules</h3>
+          <i class="fas fa-theater-masks text-3xl text-blue-500 mr-4"></i>
+          <h2 class="text-2xl font-bold">Roleplay Rules</h2>
         </div>
 
-        <div class="space-y-6">
-          <div class="bg-gray-800/60 p-6 rounded-lg">
-            <h4 class="text-xl font-semibold mb-3">Off-Limits Areas</h4>
-            <p class="text-gray-300">Fort Zancudo & the aircraft carriers are restricted due to heavy security.</p>
+        <div class="space-y-6 text-gray-300">
+          <div class="bg-gray-700/40 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3">Off-Limits Areas</h3>
+            <p>Fort Zancudo and the aircraft carriers are restricted due to heavy security.</p>
           </div>
 
-          <div class="bg-gray-800/60 p-6 rounded-lg">
-            <h4 class="text-xl font-semibold mb-3">Deathmatch, Revenge & KOS</h4>
-            <ul class="list-disc pl-6 space-y-3 text-gray-300">
-              <li>Vehicle ramming is generally LQRP.</li>
+          <div class="bg-gray-700/40 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3">Deathmatch, Revenge & Kill On Sight</h3>
+            <ul class="list-disc pl-6 space-y-3">
+              <li>Vehicle ramming is generally LQRP even if “justified”.</li>
               <li>Self-defense must be proportional and roleplayed.</li>
               <li>RDM/VDM strictly prohibited.</li>
-              <li>Always initiate RP and communicate before violence.</li>
+              <li>Always initiate RP and clearly communicate before violence.</li>
             </ul>
           </div>
 
-          <div class="bg-gray-800/60 p-6 rounded-lg">
-            <h4 class="text-xl font-semibold mb-3">New Life Rule (NLR)</h4>
-            <ul class="list-disc pl-6 space-y-3 text-gray-300">
+          <div class="bg-gray-700/40 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3">New Life Rule (NLR)</h3>
+            <ul class="list-disc pl-6 space-y-3">
               <li>Triggered on respawn or hospital treatment.</li>
-              <li>Wait 30m before returning to the scene; 60m before hostility.</li>
-              <li>Don’t return to concluded scenes.</li>
+              <li>Wait 30 minutes before returning to the scene; 60 minutes before hostility.</li>
+              <li>Do not return to concluded scenes.</li>
             </ul>
           </div>
 
-          <div class="bg-gray-800/60 p-6 rounded-lg">
-            <h4 class="text-xl font-semibold mb-3">Combat Logging</h4>
-            <ul class="list-disc pl-6 space-y-3 text-gray-300">
-              <li>No disconnect/respawn to avoid consequences.</li>
+          <div class="bg-gray-700/40 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3">Combat Logging</h3>
+            <ul class="list-disc pl-6 space-y-3">
+              <li>No disconnect/respawn to avoid in-character consequences.</li>
               <li>If you crash, reconnect and continue the scene.</li>
-              <li>No emote abuse to gain combat advantage.</li>
+              <li>No emote abuse for combat advantages.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section id="character" class="card rounded-xl p-8 mb-10 reveal">
+      <section id="character" class="card-hover card-glow bg-gray-800 p-8 rounded-lg mb-10 reveal">
         <div class="flex items-center mb-6">
-          <i class="fa-solid fa-user text-3xl text-blue-500 mr-4"></i>
-          <h3 class="text-2xl font-bold">Character Guidelines</h3>
+          <i class="fas fa-user text-3xl text-blue-500 mr-4"></i>
+          <h2 class="text-2xl font-bold">Character Guidelines</h2>
         </div>
-        <div class="bg-gray-800/60 p-6 rounded-lg text-gray-300">
+        <div class="bg-gray-700/40 p-6 rounded-lg text-gray-300">
           <ul class="list-disc pl-6 space-y-3">
-            <li>Official roles (PD/DOC/DOJ/EMS) require high integrity; no corruption/equipment abuse.</li>
+            <li>PD/DOC/DOJ/EMS roles require integrity (no corruption/equipment abuse).</li>
             <li>Keep characters separate; no cross-knowledge between alts.</li>
-            <li>Inactive properties (90 days) may be reclaimed.</li>
+            <li>Properties inactive for 90 days may be reclaimed to keep the world dynamic.</li>
           </ul>
         </div>
       </section>
 
-      <!-- Back to top -->
-      <button id="backTop" class="backtotop fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg">
-        <i class="fa-solid fa-arrow-up text-xl"></i>
+      <!-- Back to Top -->
+      <button id="backTop" class="backtotop fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg button-glow" aria-label="Back to Top">
+        <i class="fas fa-arrow-up text-xl"></i>
       </button>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="bg-black py-8">
     <div class="container mx-auto px-4 text-center">
-      <p class="text-gray-500">© 2025 AXV3. All rights reserved.</p>
+      <p class="text-gray-500">&copy; 2025 AXV3. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    // Mobile nav
-    document.getElementById('mobileBtn').addEventListener('click', () => {
-      document.getElementById('mobileNav').classList.toggle('hidden');
-    });
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-    // Smooth scroll for TOC
-    document.querySelectorAll('.toc a').forEach(a => {
-      a.addEventListener('click', e => {
+    // Reveal on scroll (matches your smooth style)
+    const obs = new IntersectionObserver((entries)=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+    // Smooth scroll + scrollspy for TOC
+    const chips = Array.from(document.querySelectorAll('.toc-chip'));
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+
+    chips.forEach(link=>{
+      link.addEventListener('click', (e)=>{
         e.preventDefault();
-        const id = a.getAttribute('href').slice(1);
+        const id = link.getAttribute('href').slice(1);
         const el = document.getElementById(id);
-        const y = el.getBoundingClientRect().top + window.pageYOffset - 90;
+        const headerOffset = 90;
+        const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
       });
     });
 
-    // Reveal on scroll
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-    // Scrollspy highlight
-    const sections = [...document.querySelectorAll('section[id]')];
-    const tocLinks = [...document.querySelectorAll('.toc a')];
-    function scrollSpy(){
+    const spy = ()=>{
       const pos = window.scrollY + 120;
       let current = sections[0].id;
-      sections.forEach(s => { if (pos >= s.offsetTop) current = s.id; });
-      tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
-    }
-    window.addEventListener('scroll', scrollSpy); window.addEventListener('load', scrollSpy);
+      sections.forEach(s=>{ if(pos >= s.offsetTop) current = s.id; });
+      chips.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === '#'+current));
+    };
+    window.addEventListener('scroll', spy);
+    window.addEventListener('load', spy);
 
-    // Back-to-top visibility
+    // Back-to-top show/hide + action
     const back = document.getElementById('backTop');
     function toggleBack(){ window.scrollY > 280 ? back.classList.add('show') : back.classList.remove('show'); }
-    window.addEventListener('scroll', toggleBack); window.addEventListener('load', toggleBack);
-    back.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    window.addEventListener('scroll', toggleBack);
+    window.addEventListener('load', toggleBack);
+    back.addEventListener('click', ()=>window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 </body>
 </html>
