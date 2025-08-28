@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-950 text-white">
   <!-- Header -->
   <header class="fixed w-full bg-black/80 backdrop-blur-sm z-50 transition-transform duration-300">
     <div class="container mx-auto px-4">
@@ -53,13 +53,10 @@
         A complete ready-to-use FiveM server with essential scripts, smooth performance, and easy customization.
       </p>
       <div class="flex flex-col md:flex-row justify-center gap-4 fade-up">
-        <!-- FIXED button colors -->
-        <a id="connectLink" href="#" target="_blank" 
-           class="button-hover button-glow bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold flex items-center justify-center gap-2">
+        <a id="connectLink" href="#" target="_blank" class="button-hover button-glow bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-semibold flex items-center justify-center gap-2">
           <i class="fas fa-play-circle"></i> Connect to Server
         </a>
-        <a href="pages/join.html" 
-           class="button-hover button-glow bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full text-lg font-semibold">
+        <a href="pages/join.html" class="button-hover button-glow bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full text-lg font-semibold">
           How to Join
         </a>
       </div>
@@ -67,8 +64,27 @@
   </section>
 
   <!-- Features -->
-  <section class="py-20 bg-gray-900">
+  <section class="py-20 bg-gray-950">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-blue-400">Why Choose AXV3?</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- FIXED icon colors -
+        <div class="card-hover card-glow bg-gray-900 p-6 rounded-lg text-center">
+          <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-gamepad"></i></div>
+          <h3 class="text-xl font-bold mb-2">Fully Optimized</h3>
+          <p class="text-gray-400">Lightweight and performance-focused for smooth gameplay with minimal lag.</p>
+        </div>
+        <div class="card-hover card-glow bg-gray-900 p-6 rounded-lg text-center">
+          <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-users"></i></div>
+          <h3 class="text-xl font-bold mb-2">Ready-to-Play</h3>
+          <p class="text-gray-400">Pre-configured scripts and jobs to launch your server instantly.</p>
+        </div>
+        <div class="card-hover card-glow bg-gray-900 p-6 rounded-lg text-center">
+          <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-star"></i></div>
+          <h3 class="text-xl font-bold mb-2">Custom Features</h3>
+          <p class="text-gray-400">Unique scripts and systems to make your server stand out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social
