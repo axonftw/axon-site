@@ -1,137 +1,122 @@
-/* ========== Base / Tokens ========== */
+/* ============== AXV3 — styles.css (ready) ============== */
+/* Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Brand Colors (single source of truth) */
 :root{
-  /* Accent (Tailwind blue-500 / blue-600) */
-  --axv3-accent-500:#3b82f6;
-  --axv3-accent-600:#2563eb;
-
-  /* Surfaces */
-  --axv3-panel-800:#1f2937;  /* bg-gray-800 */
-  --axv3-panel-900:#111827;  /* bg-gray-900 */
-
-  /* Shadows using accent */
-  --axv3-shadow-300: 0 0 10px rgba(59,130,246,.30);
-  --axv3-shadow-200: 0 0 15px rgba(59,130,246,.20);
-  --axv3-shadow-400: 0 0 15px rgba(59,130,246,.40);
+  --axv-blue: #3b82f6;      /* primary */
+  --axv-blue-700: #2563eb;  /* hover/darker */
+  --axv-bg-dark: #0b1018;   /* page background accent (optional) */
 }
 
-*{ font-family:'Poppins',sans-serif; scroll-behavior:smooth; }
+*{
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
 
-/* ========== Hero Background ========== */
+/* ---------------- Backgrounds ---------------- */
 .bg-hero-pattern{
   background-image:
     linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
     url('https://images.unsplash.com/photo-1605152276897-4f618f831968');
-  background-attachment:fixed;
-  background-position:center;
-  background-repeat:no-repeat;
-  background-size:cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* ========== Animations ========== */
-.fade-in{ animation:fadeIn .6s ease; }
-.fade-up{ animation:fadeUp .6s ease; }
-.fade-down{ animation:fadeDown .6s ease; }
-.scale-up{ animation:scaleUp .4s ease; }
-
+/* ---------------- Animations ---------------- */
 @keyframes fadeIn{ from{opacity:0} to{opacity:1} }
-@keyframes fadeUp{ from{opacity:0; transform:translateY(20px)} to{opacity:1; transform:translateY(0)} }
-@keyframes fadeDown{ from{opacity:0; transform:translateY(-20px)} to{opacity:1; transform:translateY(0)} }
-@keyframes scaleUp{ from{opacity:0; transform:scale(.95)} to{opacity:1; transform:scale(1)} }
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(20px) }
+  to{   opacity:1; transform:translateY(0) }
+}
+@keyframes fadeDown{
+  from{ opacity:0; transform:translateY(-20px) }
+  to{   opacity:1; transform:translateY(0) }
+}
+@keyframes scaleUp{
+  from{ opacity:0; transform:scale(.95) }
+  to{   opacity:1; transform:scale(1) }
+}
 
-/* Section/hero stagger helpers (optional) */
-.hero-title{ animation:fadeDown .8s ease-out; }
-.hero-subtitle{ animation:fadeUp .8s ease-out .2s both; }
-.hero-buttons{ animation:fadeUp .8s ease-out .4s both; }
-.section-title{ animation:fadeIn .8s ease-out; }
-.section-content{ animation:fadeUp .8s ease-out .2s both; }
+.fade-in{ animation:fadeIn .6s ease both }
+.fade-up{ animation:fadeUp .6s ease both }
+.fade-down{ animation:fadeDown .6s ease both }
+.scale-up{ animation:scaleUp .4s ease both }
 
-/* ========== Cards / Buttons / Hovers ========== */
+/* ---------------- Cards & Buttons ---------------- */
 .card-hover{
-  transition:all .3s ease;
-  border-radius:8px;
-  overflow:hidden;
-  background:linear-gradient(145deg, var(--axv3-panel-800), var(--axv3-panel-900));
+  transition: all .25s ease-in-out;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1f2937, #111827);
 }
 .card-hover:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 15px -3px rgba(0,0,0,.2);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 18px -6px rgba(0,0,0,.35);
 }
 
-.card-glow{ box-shadow: var(--axv3-shadow-200); }
+.card-glow{ box-shadow: 0 0 14px rgba(59,130,246,.18) }
 
-.button-hover{ transition:all .3s ease; position:relative; overflow:hidden; }
-.button-hover:hover{ transform:translateY(-2px); box-shadow:0 4px 6px -1px rgba(38,96,220,.2); }
+.button-hover{ transition: all .25s ease-in-out; position:relative; overflow:hidden }
+.button-hover:hover{ transform: translateY(-2px) }
 
-.button-glow{ box-shadow: var(--axv3-shadow-300); }
-.button-glow:hover{ box-shadow: var(--axv3-shadow-400); transform:scale(1.05); }
+.button-glow{ box-shadow: 0 0 12px rgba(59,130,246,.28) }
+.button-glow:hover{ box-shadow: 0 0 18px rgba(59,130,246,.45) }
 
-.hover-lift{ transition:transform .3s ease; }
-.hover-lift:hover{ transform:translateY(-3px); }
+/* Brand button + helpers for consistent blue everywhere */
+.text-axv{ color: var(--axv-blue) !important }
+.bg-axv{ background-color: var(--axv-blue) !important; color:#fff !important }
+.btn-axv{
+  background-color: var(--axv-blue) !important;
+  color:#fff !important;
+  transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.btn-axv:hover{ background-color: var(--axv-blue-700) !important }
 
-/* ========== Navigation ========== */
-.nav-link{ position:relative; transition:color .2s ease-in-out; }
-.nav-link:hover{ color:var(--axv3-accent-500); }
+/* ---------------- Nav links ---------------- */
+.nav-link{ position:relative; transition: color .2s ease }
 .nav-link::after{
-  content:'';
-  position:absolute; left:0; bottom:-2px;
-  width:0; height:2px; background:var(--axv3-accent-500);
-  transition:width .3s ease;
+  content:""; position:absolute; left:0; bottom:-3px; height:2px; width:0;
+  background: var(--axv-blue); transition: width .25s ease;
 }
-.nav-link:hover::after{ width:100%; }
-/* Optional active state */
-.nav-link.active,
-.nav-link[aria-current="page"]{
-  color:var(--axv3-accent-500);
-}
-.nav-link.active::after,
-.nav-link[aria-current="page"]::after{
-  width:100%;
-}
+.nav-link:hover::after{ width:100% }
 
-/* ========== Titles / Text Effects ========== */
-.title-glow{ text-shadow:0 0 10px rgba(59,130,246,.5); }
+/* ---------------- Text & Effects ---------------- */
+.title-glow{ text-shadow: 0 0 12px rgba(59,130,246,.45) }
 .text-gradient{
-  background:linear-gradient(45deg, var(--axv3-accent-500), var(--axv3-accent-600));
+  background: linear-gradient(45deg, var(--axv-blue), var(--axv-blue-700));
   -webkit-background-clip:text; background-clip:text; color:transparent;
 }
+.hover-lift{ transition: transform .25s ease }
+.hover-lift:hover{ transform: translateY(-3px) }
 
-/* ========== Subtle BG glow helper ========== */
-.bg-glow{ position:relative; }
+/* Background subtle radial glow for panels */
+.bg-glow{ position:relative }
 .bg-glow::before{
-  content:''; position:absolute; inset:0;
-  background:radial-gradient(circle at center, rgba(59,130,246,.10) 0%, transparent 70%);
+  content:""; position:absolute; inset:0;
+  background: radial-gradient(circle at 50% -10%, rgba(59,130,246,.12), transparent 60%);
   pointer-events:none;
 }
 
-/* ========== Gallery Hover ========== */
-.gallery-item{ overflow:hidden; position:relative; cursor:pointer; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,.1); }
-.gallery-item img{ transition:transform .5s ease; }
-.gallery-item:hover img{ transform:scale(1.05); }
+/* ---------------- Gallery helper (optional) ---------------- */
+.gallery-item{ overflow:hidden; position:relative; cursor:pointer; border-radius:10px }
+.gallery-item img{ transition: transform .5s ease }
+.gallery-item:hover img{ transform: scale(1.05) }
 
-/* ========== “Animate on Scroll” utility ========== */
-.animate-on-scroll{ opacity:0; transform:translateY(20px); transition:all .6s ease; }
-.animate-on-scroll.visible{ opacity:1; transform:translateY(0); }
-
-/* ========== Scrollbar ========== */
-::-webkit-scrollbar{ width:8px; }
-::-webkit-scrollbar-track{ background:#1a1a1a; }
-::-webkit-scrollbar-thumb{ background:var(--axv3-accent-500); border-radius:4px; }
-::-webkit-scrollbar-thumb:hover{ background:var(--axv3-accent-600); }
-
-/* ========== Mobile Menu (slide-in) ========== */
+/* ---------------- Mobile menu ---------------- */
 @media (max-width:768px){
   .mobile-menu{
     position:fixed; top:0; right:-100%; width:100%; height:100vh;
-    background:rgba(0,0,0,.95); backdrop-filter:blur(8px);
+    background: rgba(0,0,0,.95); backdrop-filter: blur(8px);
     transition:right .3s ease;
   }
-  .mobile-menu.active{ right:0; }
+  .mobile-menu.active{ right:0 }
 }
 
-/* ========== Modals (if used) ========== */
-.modal-enter{ animation:modalEnter .3s ease-out; }
-.modal-leave{ animation:modalLeave .3s ease-in; }
-@keyframes modalEnter{ from{opacity:0; transform:scale(.95) translateY(-10px)} to{opacity:1; transform:scale(1) translateY(0)} }
-@keyframes modalLeave{ from{opacity:1; transform:scale(1) translateY(0)} to{opacity:0; transform:scale(.95) translateY(-10px)} }
+/* ---------------- Scrollbar ---------------- */
+::-webkit-scrollbar{ width:8px }
+::-webkit-scrollbar-track{ background:#111827 }
+::-webkit-scrollbar-thumb{ background: var(--axv-blue); border-radius:4px }
+::-webkit-scrollbar-thumb:hover{ background: var(--axv-blue-700) }
