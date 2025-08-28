@@ -13,33 +13,15 @@
     .fade-up { animation: fadeUp 0.8s ease-out; }
     .scale-up { animation: scaleUp 0.6s ease-out; }
     
-    @keyframes fadeIn {
-      from { opacity: 0; } to { opacity: 1; }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes scaleUp {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes scaleUp { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
 
     /* Cards and buttons */
-    .card-glow {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card-glow:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(59,130,246,0.4);
-    }
-    .button-glow {
-      transition: all 0.3s ease;
-    }
-    .button-glow:hover {
-      box-shadow: 0 0 15px rgba(59,130,246,0.5);
-      transform: scale(1.05);
-    }
+    .card-glow { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-glow:hover { transform: translateY(-5px); box-shadow: 0 0 15px rgba(59,130,246,0.4); }
+    .button-glow { transition: all 0.3s ease; }
+    .button-glow:hover { box-shadow: 0 0 15px rgba(59,130,246,0.5); transform: scale(1.05); }
   </style>
 </head>
 <body class="bg-gray-900 text-white">
@@ -79,7 +61,8 @@
     <div class="absolute inset-0 bg-black/50"></div>
     <div class="container mx-auto px-4 z-10 text-center fade-in">
       <img src="logo with text (transparent).png" alt="AXON Full Logo" class="mx-auto h-32 mb-8 hover-lift scale-up" />
-      <h1 class="text-5xl md:text-7xl font-bold mb-6">
+      <!-- ↓↓↓ unified size & color to match other pages ↓↓↓ -->
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
         Welcome to <span class="text-blue-400">AXON V3</span>
       </h1>
       <p class="text-xl text-gray-300 mb-8 fade-up">
@@ -99,7 +82,7 @@
   <!-- Features -->
   <section class="py-20 bg-gray-900">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-16 text-blue-400">Why Choose AXV3?</h2>
+      <h2 class="text-4xl font-extrabold text-center mb-16 text-blue-400">Why Choose AXV3?</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="card-glow bg-gray-800 p-6 rounded-lg text-center">
           <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-gamepad"></i></div>
@@ -138,7 +121,7 @@
   <!-- Server Status -->
   <section class="py-20 bg-gray-800">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-16 text-blue-400">Server Status</h2>
+      <h2 class="text-4xl font-extrabold text-center mb-16 text-blue-400">Server Status</h2>
       <div class="bg-gray-900 rounded-lg p-6 md:p-8 shadow-lg">
         <div class="flex flex-col md:flex-row justify-between items-center mb-8">
           <div class="text-center md:text-left mb-4 md:mb-0">
