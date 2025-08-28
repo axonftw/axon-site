@@ -15,7 +15,7 @@
   </style>
 </head>
 <body class="bg-gray-950 text-white">
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="fixed w-full bg-black/80 backdrop-blur-lg z-50 transition-transform duration-300 shadow-md">
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center py-4">
@@ -47,37 +47,36 @@
     </nav>
   </header>
 
-  <!-- About Content -->
+  <!-- MAIN -->
   <main class="pt-32 pb-20">
     <div class="container mx-auto px-4 max-w-6xl">
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-10 text-center text-blue-400">About AXV3 RP</h1>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-10 text-center text-blue-400 animate__animated animate__fadeInDown">About AXV3 RP</h1>
 
-      <!-- Purpose Section -->
-      <section class="bg-gray-900 rounded-xl p-8 mb-10 shadow-xl">
+      <!-- Purpose -->
+      <section class="bg-gray-900 rounded-xl p-8 mb-10 shadow-xl animate__animated animate__fadeInUp">
         <h2 class="text-2xl font-bold mb-4">Our Purpose</h2>
-        <p class="text-gray-300 mb-4">Welcome to <strong>AXV3 RP</strong> — a custom-built FiveM roleplay server designed for serious players who value realism, quality, and a supportive community.</p>
-        <p class="text-gray-300">We aim to deliver a next-generation RP experience with custom scripts, immersive scenarios, and a fair environment where creativity thrives.</p>
+        <p class="text-gray-300 mb-4">Welcome to <strong>AXV3 RP</strong> — a custom-built FiveM roleplay server for serious players who value realism, quality, and a welcoming community.</p>
+        <p class="text-gray-300">We deliver a next-generation RP experience with custom scripts, immersive scenarios, and a balanced environment where every player can shine.</p>
       </section>
 
       <!-- Mission & Vision -->
       <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
-        <div class="bg-gradient-to-br from-blue-900 to-blue-700 rounded-xl p-6 shadow-lg hover:scale-105 transition-transform duration-300">
+        <div class="bg-gradient-to-br from-blue-900 to-blue-700 rounded-xl p-6 shadow-lg hover:scale-105 hover:shadow-blue-700/50 transition-transform duration-300 animate__animated animate__fadeInLeft">
           <h2 class="text-xl font-semibold mb-3">Our Mission</h2>
-          <p class="text-gray-200">To make immersive and high-quality FiveM roleplay accessible to everyone.</p>
+          <p class="text-gray-200">To make immersive and high-quality FiveM roleplay accessible to everyone, while keeping performance and creativity at the core.</p>
         </div>
-        <div class="bg-gradient-to-br from-blue-800 to-blue-600 rounded-xl p-6 shadow-lg hover:scale-105 transition-transform duration-300">
+        <div class="bg-gradient-to-br from-blue-800 to-blue-600 rounded-xl p-6 shadow-lg hover:scale-105 hover:shadow-blue-600/50 transition-transform duration-300 animate__animated animate__fadeInRight">
           <h2 class="text-xl font-semibold mb-3">Our Vision</h2>
-          <p class="text-gray-200">To create a trusted and lasting RP community where fairness, fun, and passion come first.</p>
+          <p class="text-gray-200">To build a trusted RP community where fairness, fun, and passion come first — powered by players, guided by innovation.</p>
         </div>
       </section>
 
-      <!-- Upgraded Meet Our Team Section -->
+      <!-- Meet Our Team -->
       <section class="bg-gray-900 rounded-xl p-10 shadow-xl mt-10">
         <h2 class="text-3xl font-bold mb-10 text-center text-blue-400 animate__animated animate__fadeIn">Meet Our Team</h2>
-
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <!-- Maintainers Card -->
-          <div class="relative group bg-gradient-to-b from-blue-900 to-blue-700 rounded-xl overflow-hidden shadow-lg cursor-pointer transform hover:-translate-y-2 transition-all duration-300 animate__animated animate__fadeInUp"
+          <!-- Maintainers -->
+          <div class="relative group bg-gradient-to-b from-blue-900 to-blue-700 rounded-xl shadow-lg cursor-pointer transform hover:-translate-y-2 hover:shadow-blue-700/50 transition-all duration-300 animate__animated animate__fadeInUp"
                onclick="openModal('ownerModal')">
             <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300"></div>
             <div class="flex flex-col items-center p-8 z-10 relative">
@@ -87,8 +86,8 @@
             </div>
           </div>
 
-          <!-- Contributors Card -->
-          <div class="relative group bg-gradient-to-b from-blue-800 to-blue-600 rounded-xl overflow-hidden shadow-lg cursor-pointer transform hover:-translate-y-2 transition-all duration-300 animate__animated animate__fadeInUp"
+          <!-- Contributors -->
+          <div class="relative group bg-gradient-to-b from-blue-800 to-blue-600 rounded-xl shadow-lg cursor-pointer transform hover:-translate-y-2 hover:shadow-blue-600/50 transition-all duration-300 animate__animated animate__fadeInUp"
                style="animation-delay: 0.2s;"
                onclick="openModal('adminModal')">
             <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300"></div>
@@ -99,8 +98,8 @@
             </div>
           </div>
 
-          <!-- Developers Card -->
-          <div class="relative group bg-gradient-to-b from-blue-700 to-blue-500 rounded-xl overflow-hidden shadow-lg cursor-pointer transform hover:-translate-y-2 transition-all duration-300 animate__animated animate__fadeInUp"
+          <!-- Development -->
+          <div class="relative group bg-gradient-to-b from-blue-700 to-blue-500 rounded-xl shadow-lg cursor-pointer transform hover:-translate-y-2 hover:shadow-blue-500/50 transition-all duration-300 animate__animated animate__fadeInUp"
                style="animation-delay: 0.4s;"
                onclick="openModal('devModal')">
             <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300"></div>
@@ -115,7 +114,7 @@
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="bg-black/80 py-6 text-center text-sm text-gray-500">
     © 2025 AXON Development. All rights reserved.
   </footer>
@@ -155,6 +154,7 @@
     </div>
   </div>
 
+  <!-- SCRIPTS -->
   <script>
     function openModal(id){const m=document.getElementById(id);if(!m)return;m.classList.remove('hidden');const c=m.querySelector('.modal-content');c.classList.remove('modal-leave');c.classList.add('modal-enter');document.body.style.overflow='hidden';}
     function closeModal(id){const m=document.getElementById(id);if(!m)return;const c=m.querySelector('.modal-content');c.classList.remove('modal-enter');c.classList.add('modal-leave');setTimeout(()=>{m.classList.add('hidden');document.body.style.overflow='auto';},300);}
