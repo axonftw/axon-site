@@ -1,23 +1,41 @@
-/* ============== AXV3 — styles.css (ready) ============== */
-/* Font */
+/* Custom Styles */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Brand Colors (single source of truth) */
-:root{
-  --axv-blue: #3b82f6;      /* primary */
-  --axv-blue-700: #2563eb;  /* hover/darker */
-  --axv-bg-dark: #0b1018;   /* page background accent (optional) */
-}
-
-*{
+* {
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
 }
 
-/* ---------------- Backgrounds ---------------- */
-.bg-hero-pattern{
-  background-image:
-    linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+/* Force the same blue everywhere */
+:root {
+  --axon-blue: #60a5fa; /* Tailwind blue-400 */
+}
+
+/* Override Tailwind default blues */
+.text-blue-400,
+.text-blue-500,
+.text-blue-600,
+.text-blue-700,
+.text-blue-800 {
+  color: var(--axon-blue) !important;
+}
+
+.bg-blue-400,
+.bg-blue-500,
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800 {
+  background-color: var(--axon-blue) !important;
+}
+
+.hover\:bg-blue-700:hover,
+.hover\:bg-blue-600:hover {
+  background-color: #3b82f6 !important; /* Tailwind blue-500 for hover */
+}
+
+/* Hero background */
+.bg-hero-pattern {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
     url('https://images.unsplash.com/photo-1605152276897-4f618f831968');
   background-attachment: fixed;
   background-position: center;
@@ -25,98 +43,16 @@
   background-size: cover;
 }
 
-/* ---------------- Animations ---------------- */
-@keyframes fadeIn{ from{opacity:0} to{opacity:1} }
-@keyframes fadeUp{
-  from{ opacity:0; transform:translateY(20px) }
-  to{   opacity:1; transform:translateY(0) }
+/* Buttons glow */
+.button-glow {
+  transition: all 0.3s ease;
 }
-@keyframes fadeDown{
-  from{ opacity:0; transform:translateY(-20px) }
-  to{   opacity:1; transform:translateY(0) }
-}
-@keyframes scaleUp{
-  from{ opacity:0; transform:scale(.95) }
-  to{   opacity:1; transform:scale(1) }
+.button-glow:hover {
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+  transform: scale(1.05);
 }
 
-.fade-in{ animation:fadeIn .6s ease both }
-.fade-up{ animation:fadeUp .6s ease both }
-.fade-down{ animation:fadeDown .6s ease both }
-.scale-up{ animation:scaleUp .4s ease both }
-
-/* ---------------- Cards & Buttons ---------------- */
-.card-hover{
-  transition: all .25s ease-in-out;
-  border-radius: 10px;
-  overflow: hidden;
-  background: linear-gradient(145deg, #1f2937, #111827);
+/* Titles glow */
+.title-glow {
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
 }
-.card-hover:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 10px 18px -6px rgba(0,0,0,.35);
-}
-
-.card-glow{ box-shadow: 0 0 14px rgba(59,130,246,.18) }
-
-.button-hover{ transition: all .25s ease-in-out; position:relative; overflow:hidden }
-.button-hover:hover{ transform: translateY(-2px) }
-
-.button-glow{ box-shadow: 0 0 12px rgba(59,130,246,.28) }
-.button-glow:hover{ box-shadow: 0 0 18px rgba(59,130,246,.45) }
-
-/* Brand button + helpers for consistent blue everywhere */
-.text-axv{ color: var(--axv-blue) !important }
-.bg-axv{ background-color: var(--axv-blue) !important; color:#fff !important }
-.btn-axv{
-  background-color: var(--axv-blue) !important;
-  color:#fff !important;
-  transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
-}
-.btn-axv:hover{ background-color: var(--axv-blue-700) !important }
-
-/* ---------------- Nav links ---------------- */
-.nav-link{ position:relative; transition: color .2s ease }
-.nav-link::after{
-  content:""; position:absolute; left:0; bottom:-3px; height:2px; width:0;
-  background: var(--axv-blue); transition: width .25s ease;
-}
-.nav-link:hover::after{ width:100% }
-
-/* ---------------- Text & Effects ---------------- */
-.title-glow{ text-shadow: 0 0 12px rgba(59,130,246,.45) }
-.text-gradient{
-  background: linear-gradient(45deg, var(--axv-blue), var(--axv-blue-700));
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-}
-.hover-lift{ transition: transform .25s ease }
-.hover-lift:hover{ transform: translateY(-3px) }
-
-/* Background subtle radial glow for panels */
-.bg-glow{ position:relative }
-.bg-glow::before{
-  content:""; position:absolute; inset:0;
-  background: radial-gradient(circle at 50% -10%, rgba(59,130,246,.12), transparent 60%);
-  pointer-events:none;
-}
-
-/* ---------------- Gallery helper (optional) ---------------- */
-.gallery-item{ overflow:hidden; position:relative; cursor:pointer; border-radius:10px }
-.gallery-item img{ transition: transform .5s ease }
-.gallery-item:hover img{ transform: scale(1.05) }
-
-/* ---------------- Mobile menu ---------------- */
-@media (max-width:768px){
-  .mobile-menu{
-    position:fixed; top:0; right:-100%; width:100%; height:100vh;
-    background: rgba(0,0,0,.95); backdrop-filter: blur(8px);
-    transition:right .3s ease;
-  }
-  .mobile-menu.active{ right:0 }
-}
-
-/* ---------------- Scrollbar ---------------- */
-::-webkit-scrollbar{ width:8px }
-::-webkit-scrollbar-track{ background:#111827 }
-::-webkit-scrollbar-thumb{ background: var(--axv-blue); border-radius:4px }
-::-webkit-scrollbar-thumb:hover{ background: var(--axv-blue-700) }
