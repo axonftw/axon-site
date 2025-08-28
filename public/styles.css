@@ -18,7 +18,7 @@
 /* Force consistent background across all pages */
 .bg-gray-900,
 .bg-gray-800 {
-    background-color: #0a0f1c !important;
+    background-color: #030712 !important; /* Tailwind gray-950 */
 }
 
 /* Smooth Animations */
@@ -163,3 +163,5 @@
 .hover-lift:hover {
     transform: translateY(-3px);
 }
+
+.bg-custom-dark { background-color: #030712 !important; }
