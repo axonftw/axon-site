@@ -1,300 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AXON V3 - Membership Passes</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles.css" />
-    <style>
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px rgba(68, 148, 239, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(68, 79, 239, 0.8); }
-            100% { box-shadow: 0 0 5px rgba(68, 71, 239, 0.5); }
-        }
-        .membership-card {
-            transition: all 0.3s ease;
-        }
-        .membership-card:hover {
-            transform: translateY(-10px);
-            animation: glow 2s infinite;
-        }
-        .best-value {
-            animation: float 3s ease-in-out infinite;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AXV3 - Membership</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .membership-card {
+      transition: all 0.3s ease;
+    }
+    .membership-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
+    }
+    .best-value {
+      animation: float 3s ease-in-out infinite;
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white min-h-screen">
-    <!-- Header with Navigation -->
-    <header class="fixed w-full bg-black/80 backdrop-blur-sm z-50 transition-transform duration-300" style="background: #000000">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <a href="../index.html" class="flex items-center space-x-2">
-                    <img src="../logo (transparent).png" alt="PX Logo" class="h-12 animate__animated animate__fadeIn" />
-                </a>
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden text-white focus:outline-none" onclick="toggleMobileMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="../index.html" class="nav-link text-white">Home</a>
-                    <a href="about.html" class="nav-link text-white">About Us</a>
-                    <a href="rules.html" class="nav-link text-white">Rules</a>
-                    <a href="join.html" class="nav-link text-white">Join Us</a>
-                    <a href="membership.html" class="nav-link text-white">Membership</a>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Navigation -->
-        <div id="mobileMenu" class="md:hidden hidden bg-black/95">
-            <div class="container mx-auto px-4 py-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="../index.html" class="nav-link text-white py-2">Home</a>
-                    <a href="about.html" class="nav-link text-white py-2">About Us</a>
-                    <a href="rules.html" class="nav-link text-white py-2">Rules</a>
-                    <a href="join.html" class="nav-link text-white py-2">Join Us</a>
-                    <a href="membership.html" class="nav-link text-white py-2">Membership</a>
-                </div>
-            </div>
-        </div>
-    </header>
+<body class="bg-gray-950 text-white min-h-screen">
 
-    <div class="container mx-auto px-4 py-12 pt-32">
-        <!-- PX Pass Header -->
-        <div class="membership-card bg-gray-800 rounded-lg p-4 md:p-8 mb-8 md:mb-12 border-2 border-blue-600 relative">
-            <div class="best-value absolute -top-4 right-4 bg-blue-600 px-4 py-1 rounded-full text-sm font-bold">BEST VALUE</div>
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="flex-1">
-                    <h2 class="text-2xl md:text-3xl font-bold text-blue-500 mb-4">👑 AXON V3 Pass</h2>
-                    <p class="text-xl md:text-2xl font-bold mb-2">5$</p>
-                    <p class="text-gray-400 mb-4">Become a True AX Legend!</p>
-                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-300">
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>3x EDM Car from Tier-1</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>3x EDM Car from Tier-2</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>2x EDM Car from Tier-3</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>1x Exclusive Car</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>2x Indian EDM Cars of Choice</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>2x PDM Bike of Choice</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>4x PDM Cars of Choice</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>Free Performance Upgrades on 4 Cars</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>5x Custom Car Number Plate (2 digit)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>Custom Phone Number (3 digit)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>Helipad Access and 1x Helicopter</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>No Queue / Direct Entry (1 Month)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>In-game Money (250k)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>Priority Support (1 Month)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>Promote Stream on Discord (1 Month)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            <span>Mansion of Choice with Furnished Luxury Shell</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex flex-col items-center justify-center w-full md:w-auto">
-                    <a href="Discord_channel_url" target="_blank" class="block w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:scale-105 text-center text-xl">Buy Now</a>
-                </div>
-            </div>
-        </div>
-
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-blue-500">🎟️ AXV3 – Pass Options 🎟️</h1>
-        <p class="text-center text-gray-300 mb-8 md:mb-12">👑 Choose Your Pass & Unlock Exclusive Perks! 👑</p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-            <!-- Bronze Pass -->
-            <div class="membership-card bg-gray-800 rounded-lg p-4 md:p-6 border border-gray-700 hover:border-blue-500">
-                <h2 class="text-xl md:text-2xl font-bold text-blue-500 mb-4">🔸 Bronze Pass</h2>
-                <p class="text-lg md:text-xl font-bold mb-2">10$</p>
-                <p class="text-gray-400 mb-4">Perfect for newcomers, this pass gives you basic features to dive into the world of RP.</p>
-                <ul class="space-y-2 text-gray-300 mb-6">
-                    <li class="flex items-start">
-                        <span class="text-blue-500 mr-2">•</span>
-                        <span>1x EDM Car from Tier-1</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-500 mr-2">•</span>
-                        <span>1x PDM Car Under 150K</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-500 mr-2">•</span>
-                        <span>Exclusive Discord Role (1 Month)</span>
-                    </li>
-                </ul>
-                <a href="Discord_channel_url" target="_blank" class="block w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3 rounded-lg transition-all duration-300 hover:scale-105 text-center">Buy Now</a>
-            </div>
-
-            <!-- Silver Pass -->
-            <div class="membership-card bg-gray-800 rounded-lg p-4 md:p-6 border border-gray-700 hover:border-yellow-400">
-                <h2 class="text-xl md:text-2xl font-bold text-yellow-400 mb-4">🔹 Silver Pass</h2>
-                <p class="text-lg md:text-xl font-bold mb-2">25$</p>
-                <p class="text-gray-400 mb-4">Upgrade your ride and perks with the Silver Pass.</p>
-                <ul class="space-y-2 text-gray-300 mb-6">
-                    <li class="flex items-start">
-                        <span class="text-yellow-400 mr-2">•</span>
-                        <span>2x EDM Cars from Tier-1 & Tier-2</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-yellow-400 mr-2">•</span>
-                        <span>2x PDM Cars Under 200K</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-yellow-400 mr-2">•</span>
-                        <span>Priority Discord Role (1 Month)</span>
-                    </li>
-                </ul>
-                <a href="Discord_channel_url" target="_blank" class="block w-full bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 text-white font-bold py-3 rounded-lg transition-all duration-300 hover:scale-105 text-center">Buy Now</a>
-            </div>
-
-            <!-- Gold Pass -->
-            <div class="membership-card bg-gray-800 rounded-lg p-4 md:p-6 border border-gray-700 hover:border-red-500">
-                <h2 class="text-xl md:text-2xl font-bold text-red-500 mb-4">🔶 Gold Pass</h2>
-                <p class="text-lg md:text-xl font-bold mb-2">40$</p>
-                <p class="text-gray-400 mb-4">For serious players, unlock rare cars and exclusive in-game content.</p>
-                <ul class="space-y-2 text-gray-300 mb-6">
-                    <li class="flex items-start">
-                        <span class="text-red-500 mr-2">•</span>
-                        <span>3x EDM Cars (Tier-1, Tier-2, Tier-3)</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-500 mr-2">•</span>
-                        <span>4x PDM Cars Under 300K</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-500 mr-2">•</span>
-                        <span>Exclusive Discord Role (3 Months)</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-500 mr-2">•</span>
-                        <span>Custom Phone Number (3 digits)</span>
-                    </li>
-                </ul>
-                <a href="Discord_channel_url" target="_blank" class="block w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-3 rounded-lg transition-all duration-300 hover:scale-105 text-center">Buy Now</a>
-            </div>
-
-            <!-- Supporter Pass -->
-            <div class="membership-card bg-gray-800 rounded-lg p-4 md:p-6 border border-gray-700 hover:border-purple-500">
-                <h2 class="text-xl md:text-2xl font-bold text-purple-500 mb-4">🌟 Supporter Pass</h2>
-                <p class="text-lg md:text-xl font-bold mb-2">30$</p>
-                <p class="text-gray-400 mb-4">Show your support and get special perks in return.</p>
-                <ul class="space-y-2 text-gray-300 mb-6">
-                    <li class="flex items-start">
-                        <span class="text-purple-500 mr-2">•</span>
-                        <span>Custom Discord Role (Permanent)</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-purple-500 mr-2">•</span>
-                        <span>VIP Access to Events</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-purple-500 mr-2">•</span>
-                        <span>5x Custom Car Number Plates</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-purple-500 mr-2">•</span>
-                        <span>In-game Money (100k)</span>
-                    </li>
-                </ul>
-                <a href="Discord_channel_url" target="_blank" class="block w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-3 rounded-lg transition-all duration-300 hover:scale-105 text-center">Buy Now</a>
-            </div>
-
-            <!-- Ultimate Pass -->
-            <div class="membership-card best-value bg-gray-800 rounded-lg p-4 md:p-6 border-4 border-red-600 hover:border-red-700 relative">
-                <div class="absolute top-2 right-2 bg-red-600 text-white font-bold px-3 py-1 rounded-full text-sm">BEST VALUE</div>
-                <h2 class="text-xl md:text-2xl font-bold text-red-600 mb-4">🚗 Ultimate Pass</h2>
-                <p class="text-lg md:text-xl font-bold mb-2">80$</p>
-                <p class="text-gray-400 mb-4">Get everything plus exclusive perks & vehicles.</p>
-                <ul class="space-y-2 text-gray-300 mb-6">
-                    <li class="flex items-start">
-                        <span class="text-red-600 mr-2">•</span>
-                        <span>All EDM Cars (Tier 1 to 3)</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-600 mr-2">•</span>
-                        <span>All PDM Cars Under 350K</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-600 mr-2">•</span>
-                        <span>Exclusive Discord Role + VIP Support</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-600 mr-2">•</span>
-                        <span>Supercar Model X</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-600 mr-2">•</span>
-                        <span>Custom Phone Number & Plate (Unlimited)</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-600 mr-2">•</span>
-                        <span>Mansion & Helicopter</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-600 mr-2">•</span>
-                        <span>No Queue / Direct Entry (3 Months)</span>
-                    </li>
-                </ul>
-                <a href="Discord_channel_url" target="_blank" class="block w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-3 rounded-lg transition-all duration-300 hover:scale-105 text-center">Buy Now</a>
-            </div>
-        </div>
+  <!-- HEADER -->
+  <header class="fixed w-full bg-black/80 backdrop-blur-lg z-50 shadow-md">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <a href="../index.html" class="flex items-center space-x-2">
+          <img src="../logo (transparent).png" alt="AXV3 Logo" class="h-12 animate__animated animate__fadeIn" />
+        </a>
+        <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+        <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+          <a href="../index.html" class="hover:text-blue-400">Home</a>
+          <a href="about.html" class="hover:text-blue-400">About Us</a>
+          <a href="rules.html" class="hover:text-blue-400">Rules</a>
+          <a href="join.html" class="hover:text-blue-400">Join Us</a>
+          <a href="membership.html" class="text-blue-400">Membership</a>
+        </nav>
+      </div>
     </div>
+    <div id="mobileMenu" class="md:hidden hidden bg-black/95">
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <a href="../index.html" class="hover:text-blue-400">Home</a>
+        <a href="about.html" class="hover:text-blue-400">About Us</a>
+        <a href="rules.html" class="hover:text-blue-400">Rules</a>
+        <a href="join.html" class="hover:text-blue-400">Join Us</a>
+        <a href="membership.html" class="text-blue-400">Membership</a>
+      </div>
+    </div>
+  </header>
 
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-    </script>
+  <!-- CONTENT -->
+  <main class="pt-32 pb-20 container mx-auto px-4">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-center text-blue-400 mb-6 animate__animated animate__fadeInDown">
+      🎟 AXV3 Membership 🎟
+    </h1>
+    <p class="text-center text-gray-300 mb-12 animate__animated animate__fadeIn">
+      Support the server and unlock premium perks: <strong>money, weapons, custom phone numbers, and exclusive roles.</strong>
+    </p>
+
+    <!-- Membership Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Bronze -->
+      <div class="membership-card bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-400 animate__animated animate__fadeInUp">
+        <h2 class="text-2xl font-bold text-blue-400 mb-4">🔹 Bronze</h2>
+        <p class="text-xl font-bold mb-2">$10</p>
+        <ul class="space-y-3 text-gray-300 mb-6">
+          <li><i class="fas fa-money-bill-wave text-blue-400 mr-2"></i> $100,000 In-Game Money</li>
+          <li><i class="fas fa-gun text-blue-400 mr-2"></i> Basic Weapon Pack</li>
+          <li><i class="fas fa-user-tag text-blue-400 mr-2"></i> Custom Discord Role (1 Month)</li>
+        </ul>
+        <a href="Discord_channel_url" target="_blank"
+           class="block w-full text-center bg-blue-600 hover:bg-blue-700 px-4 py-3 rounded-lg font-bold transition transform hover:scale-105 shadow-lg">
+          Buy Now
+        </a>
+      </div>
+
+      <!-- Silver -->
+      <div class="membership-card bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-400 animate__animated animate__fadeInUp">
+        <h2 class="text-2xl font-bold text-blue-400 mb-4">🔸 Silver</h2>
+        <p class="text-xl font-bold mb-2">$25</p>
+        <ul class="space-y-3 text-gray-300 mb-6">
+          <li><i class="fas fa-money-bill-wave text-blue-400 mr-2"></i> $300,000 In-Game Money</li>
+          <li><i class="fas fa-gun text-blue-400 mr-2"></i> Advanced Weapon Pack</li>
+          <li><i class="fas fa-phone text-blue-400 mr-2"></i> Custom Phone Number (4 digits)</li>
+          <li><i class="fas fa-user-tag text-blue-400 mr-2"></i> Custom Discord Role (1 Month)</li>
+        </ul>
+        <a href="Discord_channel_url" target="_blank"
+           class="block w-full text-center bg-blue-600 hover:bg-blue-700 px-4 py-3 rounded-lg font-bold transition transform hover:scale-105 shadow-lg">
+          Buy Now
+        </a>
+      </div>
+
+      <!-- Gold -->
+      <div class="membership-card best-value bg-gray-900 rounded-xl p-6 border-2 border-blue-500 animate__animated animate__fadeInUp relative">
+        <div class="absolute top-2 right-2 bg-blue-500 text-white text-xs px-3 py-1 rounded-full font-bold">
+          BEST VALUE
+        </div>
+        <h2 class="text-2xl font-bold text-blue-400 mb-4">💎 Gold</h2>
+        <p class="text-xl font-bold mb-2">$50</p>
+        <ul class="space-y-3 text-gray-300 mb-6">
+          <li><i class="fas fa-money-bill-wave text-blue-400 mr-2"></i> $750,000 In-Game Money</li>
+          <li><i class="fas fa-gun text-blue-400 mr-2"></i> Full Weapon Pack</li>
+          <li><i class="fas fa-phone text-blue-400 mr-2"></i> Custom Phone Number (3 digits)</li>
+          <li><i class="fas fa-user-tag text-blue-400 mr-2"></i> Exclusive Custom Discord Role (Permanent)</li>
+        </ul>
+        <a href="Discord_channel_url" target="_blank"
+           class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-4 py-3 rounded-lg font-bold transition transform hover:scale-105 shadow-lg">
+          Buy Now
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-6 text-center text-gray-500">
+    © 2025 AXV3. All rights reserved.
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
