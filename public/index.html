@@ -8,29 +8,37 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Animations */
+    /* Smooth animations */
+    .fade-in { animation: fadeIn 0.8s ease-in; }
+    .fade-up { animation: fadeUp 0.8s ease-out; }
+    .scale-up { animation: scaleUp 0.6s ease-out; }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(25px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @keyframes scaleUp {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
-    .animate-fade-up { animation: fadeUp 0.8s ease-out forwards; }
-    .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
 
-    /* Hover effects */
-    .btn-glow:hover {
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
-      transform: translateY(-2px);
+    /* Cards and buttons */
+    .card-glow {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card-hover:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    .card-glow:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(59,130,246,0.4);
     }
-    .card-hover {
+    .button-glow {
       transition: all 0.3s ease;
+    }
+    .button-glow:hover {
+      box-shadow: 0 0 15px rgba(59,130,246,0.5);
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -40,47 +48,48 @@
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center py-4">
         <a href="index.html" class="flex items-center space-x-2">
-          <img src="logo (transparent).png" alt="AXON V3 Logo" class="h-12 hover:scale-105 transition-transform duration-300" />
+          <img src="logo (transparent).png" alt="AXON Logo" class="h-12 hover-lift" />
         </a>
         <button class="md:hidden text-white" onclick="toggleMobileMenu()">
           <i class="fas fa-bars text-2xl"></i>
         </button>
-        <nav class="hidden md:flex space-x-8">
-          <a href="index.html" class="hover:text-blue-400 transition">Home</a>
-          <a href="pages/about.html" class="hover:text-blue-400 transition">About Us</a>
-          <a href="pages/rules.html" class="hover:text-blue-400 transition">Rules</a>
-          <a href="pages/join.html" class="hover:text-blue-400 transition">Join Us</a>
-          <a href="pages/membership.html" class="hover:text-blue-400 transition">Membership</a>
-        </nav>
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html" class="nav-link text-white">Home</a>
+          <a href="pages/about.html" class="nav-link text-white">About Us</a>
+          <a href="pages/rules.html" class="nav-link text-white">Rules</a>
+          <a href="pages/join.html" class="nav-link text-white">Join Us</a>
+          <a href="pages/membership.html" class="nav-link text-white">Membership</a>
+        </div>
       </div>
     </div>
     <div id="mobileMenu" class="md:hidden hidden bg-black/95">
-      <div class="px-4 py-4 flex flex-col space-y-4">
-        <a href="index.html" class="hover:text-blue-400 transition">Home</a>
-        <a href="pages/about.html" class="hover:text-blue-400 transition">About Us</a>
-        <a href="pages/rules.html" class="hover:text-blue-400 transition">Rules</a>
-        <a href="pages/join.html" class="hover:text-blue-400 transition">Join Us</a>
-        <a href="pages/membership.html" class="hover:text-blue-400 transition">Membership</a>
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <a href="index.html" class="nav-link text-white">Home</a>
+        <a href="pages/about.html" class="nav-link text-white">About Us</a>
+        <a href="pages/rules.html" class="nav-link text-white">Rules</a>
+        <a href="pages/join.html" class="nav-link text-white">Join Us</a>
+        <a href="pages/membership.html" class="nav-link text-white">Membership</a>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="h-screen flex items-center justify-center relative text-center">
+  <section class="h-screen relative flex items-center justify-center">
+    <div class="absolute inset-0 bg-hero-pattern"></div>
     <div class="absolute inset-0 bg-black/50"></div>
-    <div class="z-10 px-4 animate-fade-up">
-      <img src="logo with text (transparent).png" alt="AXON V3" class="mx-auto h-32 mb-6 hover:scale-105 transition" />
-      <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
-        Welcome to <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">AXON V3</span>
+    <div class="container mx-auto px-4 z-10 text-center fade-in">
+      <img src="logo with text (transparent).png" alt="AXON Full Logo" class="mx-auto h-32 mb-8 hover-lift scale-up" />
+      <h1 class="text-5xl md:text-7xl font-bold mb-6">
+        Welcome to <span class="text-blue-400">AXON V3</span>
       </h1>
-      <p class="text-gray-300 text-xl mb-8">
-        A ready-to-use FiveM server with all essential scripts, smooth performance, and easy customization.
+      <p class="text-xl text-gray-300 mb-8 fade-up">
+        A complete ready-to-use FiveM server with essential scripts, smooth performance, and easy customization.
       </p>
-      <div class="flex flex-col md:flex-row justify-center gap-4">
-        <a id="connectLink" href="#" target="_blank" class="btn-glow bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-semibold transition">
-          <i class="fas fa-play-circle mr-2"></i> Connect to Server
+      <div class="flex flex-col md:flex-row justify-center gap-4 fade-up">
+        <a id="connectLink" href="#" target="_blank" class="button-glow bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-semibold flex items-center justify-center gap-2">
+          <i class="fas fa-play-circle"></i> Connect to Server
         </a>
-        <a href="pages/join.html" class="btn-glow bg-gray-800 hover:bg-gray-700 px-8 py-3 rounded-full font-semibold transition">
+        <a href="pages/join.html" class="button-glow bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full text-lg font-semibold">
           How to Join
         </a>
       </div>
@@ -88,59 +97,61 @@
   </section>
 
   <!-- Features -->
-  <section class="py-20">
+  <section class="py-20 bg-gray-900">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Why Choose AXV3?</h2>
+      <h2 class="text-4xl font-bold text-center mb-16 text-blue-400">Why Choose AXV3?</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="card-hover bg-gray-800 p-6 rounded-lg">
+        <div class="card-glow bg-gray-800 p-6 rounded-lg text-center">
           <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-gamepad"></i></div>
           <h3 class="text-xl font-bold mb-2">Fully Optimized</h3>
           <p class="text-gray-400">Lightweight and performance-focused for smooth gameplay with minimal lag.</p>
         </div>
-        <div class="card-hover bg-gray-800 p-6 rounded-lg">
+        <div class="card-glow bg-gray-800 p-6 rounded-lg text-center">
           <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-users"></i></div>
           <h3 class="text-xl font-bold mb-2">Ready-to-Play</h3>
-          <p class="text-gray-400">Pre-configured scripts, jobs, and resources to launch instantly.</p>
+          <p class="text-gray-400">Pre-configured scripts and jobs to launch your server instantly.</p>
         </div>
-        <div class="card-hover bg-gray-800 p-6 rounded-lg">
+        <div class="card-glow bg-gray-800 p-6 rounded-lg text-center">
           <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-star"></i></div>
           <h3 class="text-xl font-bold mb-2">Custom Features</h3>
-          <p class="text-gray-400">Exclusive scripts and systems you won’t find anywhere else.</p>
+          <p class="text-gray-400">Unique scripts and systems to make your server stand out.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Social Links -->
-  <section class="py-16 bg-black text-center">
-    <h2 class="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Join Our Community</h2>
-    <div class="flex flex-wrap justify-center gap-6">
-      <a href="https://discord.gg/X6jabC9pAu" target="_blank" class="btn-glow bg-[#5865F2] hover:bg-[#4752C4] px-8 py-3 rounded-lg flex items-center gap-2 transition">
-        <i class="fab fa-discord"></i> Discord
-      </a>
-      <a href="https://www.instagram.com/axonftw" target="_blank" class="btn-glow bg-gradient-to-r from-[#405DE6] to-[#5851DB] hover:from-[#833AB4] hover:to-[#C13584] px-8 py-3 rounded-lg flex items-center gap-2 transition">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
+  <!-- Social -->
+  <section class="py-16 bg-black">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8 text-blue-400">Join Our Community</h2>
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="https://discord.gg/X6jabC9pAu" target="_blank" class="button-glow bg-[#5865F2] hover:bg-[#4752C4] text-white px-8 py-4 rounded-lg flex items-center gap-2">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+        <a href="https://www.instagram.com/axonftw" target="_blank" class="button-glow bg-gradient-to-r from-[#405DE6] to-[#5851DB] hover:from-[#833AB4] hover:to-[#C13584] text-white px-8 py-4 rounded-lg flex items-center gap-2">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Server Status -->
   <section class="py-20 bg-gray-800">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Server Status</h2>
-      <div class="bg-gray-900 rounded-lg p-6">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+      <h2 class="text-4xl font-bold text-center mb-16 text-blue-400">Server Status</h2>
+      <div class="bg-gray-900 rounded-lg p-6 md:p-8 shadow-lg">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
           <div class="text-center md:text-left mb-4 md:mb-0">
-            <h3 class="text-2xl font-bold">AXV3</h3>
+            <h3 class="text-2xl font-bold mb-2">AXV3</h3>
             <p class="text-gray-400">Powered by Axon Development</p>
           </div>
-          <div class="flex gap-6">
+          <div class="flex items-center space-x-8">
             <div class="text-center">
-              <p class="text-3xl font-bold text-blue-500" id="playerCount">0</p>
+              <p class="text-3xl font-bold text-blue-400" id="playerCount">0</p>
               <p class="text-gray-400">Players Online</p>
             </div>
             <div class="text-center">
-              <p class="text-3xl font-bold text-blue-500" id="maxPlayers">32</p>
+              <p class="text-3xl font-bold text-blue-400" id="maxPlayers">32</p>
               <p class="text-gray-400">Max Players</p>
             </div>
           </div>
@@ -154,8 +165,10 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black py-8 text-center text-gray-500">
-    &copy; 2025 AXON Development. All rights reserved.
+  <footer class="bg-black py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-500">&copy; 2025 AXON Development. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
